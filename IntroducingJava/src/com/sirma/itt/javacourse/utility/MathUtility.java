@@ -5,28 +5,37 @@ package com.sirma.itt.javacourse.utility;
  * @author tpetrov
  * Contains calculation methods
  */
-public class MathUtility{
+public final class MathUtility{
 	/**
-	 * Calculates the greates common divisor of two integers
-	 * @param a stores the first number
-	 * @param b stores the second number
-	 * @return returns the result of the calculation
+	 * 
+	 */
+	private MathUtility(){
+	/**
+	 * Constructor.
+	 */	
+	}
+	/**
+	 * Calculates the greates common divisor of two integers.
+	 * @param a stores the first number.
+	 * @param b stores the second number.
+	 * @return returns the result of the calculation.
 	 */
 	 public static int calcGreatestCommonDivisor(int a, int b){
-		 
-		while (a != b){
-			if (a > b)
-				a = a - b;
-			else 
-				b = b - a;
-		}
-		return a;
+		 int c = a;
+		 int d = b;
+		 while (c != d){
+			 if (c > d)
+				 c = c - d;
+			 else 
+				 d = d - c;
+		 }
+		 return c;
 	}
 	 /**
-	 * Calculates the least common multiplier of two integers
-	 * @param a stores the first number
-	 * @param b stores the second number
-	 * @return returns the result of the calculation
+	 * Calculates the least common multiplier of two integers.
+	 * @param a stores the first number.
+	 * @param b stores the second number.
+	 * @return returns the result of the calculation.
 	  */
 	 public static int calcLeastCommonMultiplier(int a, int b){
 			int c = (a * b)/calcGreatestCommonDivisor(a, b);
@@ -34,14 +43,13 @@ public class MathUtility{
 		 }
 	 /**
 	  * 
-	  * @param array Stores an array varuable
-	  * @param length Stores the legth of the array (its number of elements)
-	  * @return returns the index of the element with minimum value
+	  * @param array Stores an array varuable.
+	  * @return returns the index of the element with minimum value.
 	  */
-	 public static int getMinElement(int[] array, int length){
+	 public static int getMinElement(int[] array){
 		 
 		 int minElementIndex = 0;
-		 for(int i = minElementIndex; i < length; i++){
+		 for(int i = minElementIndex; i < array.length; i++){
 			 if(array[minElementIndex] > array[i]){
 				 minElementIndex = i;
 			 }
@@ -50,8 +58,8 @@ public class MathUtility{
 	 }
 	 /**
 	  * 
-	   @param array Stores an array varuable
-	  * @return returns the sum of all elements in the array
+	   @param array Stores an array varuable.
+	  * @return returns the sum of all elements in the array.
 	  */
 	 public static int sum(int[] array){
 		 int result = 0;
@@ -61,8 +69,8 @@ public class MathUtility{
 		 return result;
 	 }
 	 /**
-	  * prints the array's elements to screen
-	  * @param array Stores an array varuable
+	  * prints the array's elements to screen.
+	  * @param array Stores an array varuable.
 	  */
 	 public static void print(int [] array){
 		 for (int i = 0;i < array.length;i++){

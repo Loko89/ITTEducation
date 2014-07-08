@@ -3,14 +3,19 @@ import java.util.Scanner;
 
 import com.sirma.itt.javacourse.utility.MathUtility;
 /**
- * 
+ * Program for processing an array of integers.
  * @author tpetrov
- *
  */
-public class ArrayProcessing {
+public final class ArrayProcessing {
 /**
  * 
- * Program for processing an array of integers
+ */
+	private ArrayProcessing(){
+		
+	}
+/**
+ * 
+ * @param args global param.
  */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -20,10 +25,10 @@ public class ArrayProcessing {
 			System.out.printf("Insert element N"+i+": ");
 			myArray[i] = input.nextInt();
 		}
-		System.out.println("The index of the MIN element in the array is "+MathUtility.getMinElement(myArray,myArray.length));
+		System.out.println("The index of the MIN element in the array is "+MathUtility.getMinElement(myArray));
 		System.out.println("The SUM of the elements in the array is "+MathUtility.sum(myArray));
 		MathUtility.print(myArray);
 		input.close();
 	}
-
+	
 }
