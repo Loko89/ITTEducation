@@ -5,7 +5,7 @@ package com.sirma.itt.javacourse.utility;
  * @author tpetrov
  * Contains calculation methods
  */
-public class IntegerProcessing{
+public class MathUtility{
 	/**
 	 * Calculates the greates common divisor of two integers
 	 * @param a stores the first number
@@ -13,7 +13,7 @@ public class IntegerProcessing{
 	 * @return returns the result of the calculation
 	 */
 	 public static int calcGreatestCommonDivisor(int a, int b){
-		
+		 
 		while (a != b){
 			if (a > b)
 				a = a - b;

@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.intro.run;
 import java.util.Scanner;
 
-import com.sirma.itt.javacourse.utility.IntegerProcessing;
+import com.sirma.itt.javacourse.utility.MathUtility;
 /**
  * 
  * @author tpetrov
@@ -20,9 +20,9 @@ public class ArrayProcessing {
 			System.out.printf("Insert element N"+i+": ");
 			myArray[i] = input.nextInt();
 		}
-		System.out.println("The index of the MIN element in the array is "+IntegerProcessing.getMinElement(myArray,myArray.length));
-		System.out.println("The SUM of the elements in the array is "+IntegerProcessing.sum(myArray));
-		IntegerProcessing.print(myArray);
+		System.out.println("The index of the MIN element in the array is "+MathUtility.getMinElement(myArray,myArray.length));
+		System.out.println("The SUM of the elements in the array is "+MathUtility.sum(myArray));
+		MathUtility.print(myArray);
 		input.close();
 	}
 
