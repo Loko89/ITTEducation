@@ -26,7 +26,7 @@ public final class LeastCommonMultiplier {
 		int x = input.nextInt(); 				
 		System.out.print("Imput Y: ");
 		int y = input.nextInt();				
-		System.out.println("The leas common multiplier of "+x+" and "+y+" is: "+MathUtility.calcGreatestCommonDivisor(x, y));
+		System.out.println("The leas common multiplier of "+x+" and "+y+" is: "+MathUtility.calcLeastCommonMultiplier(x, y));
 		input.close();
 	}
 

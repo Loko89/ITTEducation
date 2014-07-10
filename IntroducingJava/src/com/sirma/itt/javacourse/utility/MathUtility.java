@@ -77,4 +77,13 @@ public final class MathUtility{
 			 System.out.println("Element myArray["+i+"] is: "+array[i]);
 		 }
 	 }
+	 /**
+	  * Finding an array's medyan.
+	  * @param array Stores an array varuable.
+	  * @return returns the array's medyan.
+	  */
+	 public static int findArraysMedyan(int[]array){
+		int medyan = 0;
+		return medyan;
+	 }
 }

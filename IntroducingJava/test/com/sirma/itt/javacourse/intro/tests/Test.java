@@ -55,8 +55,8 @@ public class Test {
 	@org.testng.annotations.Test(dataProvider = "LeastComMult")
 	public void leastComDiv(int firstNumber, int secondNumber, int expectedResult) {
 
-		int calcLeastCommonMultiplier = MathUtility.calcLeastCommonMultiplier(firstNumber, secondNumber);
-		Assert.assertEquals(calcLeastCommonMultiplier, expectedResult, "some message");	
+		int actualResult = MathUtility.calcLeastCommonMultiplier(firstNumber, secondNumber);
+		Assert.assertEquals(actualResult, expectedResult, "some message");	
 		System.err.println();
 	}
 	/**
@@ -74,8 +74,8 @@ public class Test {
 	 */
 	@org.testng.annotations.Test(dataProvider = "getMinElementIndex")
 	public void getMinElementIndex(int[] testArray, int expectedResult ){
-		int minElementIndex = MathUtility.getMinElement(testArray);
-		Assert.assertEquals(minElementIndex, expectedResult, "Error");
+		int actualResult = MathUtility.getMinElement(testArray);
+		Assert.assertEquals(actualResult, expectedResult, "Error");
 	
 	}
 	/**
@@ -93,8 +93,8 @@ public class Test {
 	 */
 	@org.testng.annotations.Test(dataProvider = "getSumOfTheElements")
 	public void getSumOfTheElements(int[] testArray, int expectedResult){	
-		int sumOfTheElements = MathUtility.sum(new int[]{3, 6, 8});
-		Assert.assertEquals(sumOfTheElements, expectedResult, "Error");
+		int actualResult = MathUtility.sum(new int[]{3, 6, 8});
+		Assert.assertEquals(actualResult, expectedResult, "Error");
 		System.err.println();
 		
 	}
