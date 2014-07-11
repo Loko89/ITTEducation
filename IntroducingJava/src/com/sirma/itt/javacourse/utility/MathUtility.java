@@ -86,52 +86,45 @@ public final class MathUtility{
 		int medyan = 0;
 		return medyan;
 	 }
+	 
 	 /**
 	  * QuickSort algorithm for sorting an array.
 	  * @param array An array for sorting.
-	  * @param left Left partition of the given array.
-	  * @param right Right partition of the given array.
-	  * @return returns a index.
-	  * 
-	  */
-	 public static int partition(int[] array, int left, int right)
-	 {
-	       int i = left;
-	       int j = right;
-	       int tmp;
-	       int pivot = array[(left + right) / 2];
-	       while (i <= j) {
-	             while (array[i] < pivot)
-	                   i++;
-	             while (array[j] > pivot)
-	                   j--;
-	             if (i <= j) {
-	                   tmp = array[i];
-	                   array[i] = array[j];
-	                   array[j] = tmp;
-	                   i++;
-	                   j--;
-	             }
-	       }
-       return i;
-	 }
-	 /**
-	  * QuickSort algorithm for sorting an array.
-	  * @param array An array for sorting.
-	  * @param left Left partition of the given array.
-	  * @param right Right partition of the given array.
 	  * @return returns a sorted array.
 	  * 
 	  */
-	 public static int[] quickSort(int[] array, int left, int right) {
-	       int index = partition(array, left, right);
-	       if (left < index - 1){
-	             quickSort(array, left, index - 1);
-	       }
-	       if (index < right){
-	             quickSort(array, index, right);
-	       }
-	       return array;
+	 public static int[] quickSort(int[] array) {
+		 	int[] low = new int[array.length/2];
+		 	int[] high = new int[array.length/2];
+		 	int j = 0;
+		 	int k = 0;
+	       	int pivot = array[array.length/2];
+	       	if (array.length == 0){
+	       		return array;
+	       	}
+	       	else{
+	       		for(int i = 0; i <array.length && i != pivot ;i++){
+	       			if (array[i]<array[pivot]){
+	       				low[j] = array[i];
+	       				j++;
+	       			}
+	       			else{
+	       				high[k] = array[i];
+	       				k++;
+	       			}
+	       		}
+	       		quickSort(low);
+	       		quickSort(high);
+	       		for(int i = 0; i < array.length; i++){
+	       			if (i < array.length/2){
+	       				array[i] = low[i];
+	       			}
+	       			else{
+	       				array[i] = high[i-array.length/2];
+	       			}
+	       		}
+	       		return array;
+	       	}
 	 }
 	 /**
 	  * 
