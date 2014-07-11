@@ -23,7 +23,7 @@ public final class ArrayMedyanFinder {
 		Scanner input = new Scanner(System.in);
 		int[]myArray = new int[15];
 		for(int iterator = 0; iterator < myArray.length; iterator++ ){
-			System.out.println("Input myArray["+iterator+"]: ");
+			System.out.printf("Input myArray["+iterator+"]: ");
 			myArray[iterator] = input.nextInt();
 		}
 		System.out.println("The Array's medyan is "+MathUtility.findArraysMedyan(myArray));

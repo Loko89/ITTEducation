@@ -93,9 +93,30 @@ public class Test {
 	 */
 	@org.testng.annotations.Test(dataProvider = "getSumOfTheElements")
 	public void getSumOfTheElements(int[] testArray, int expectedResult){	
-		int actualResult = MathUtility.sum(new int[]{3, 6, 8});
+		int actualResult = MathUtility.sum(testArray);
 		Assert.assertEquals(actualResult, expectedResult, "Error");
 		System.err.println();
 		
+	}
+	/**
+	 * 
+	 * @return Object[][]
+	 */
+	@DataProvider(name = "arrayReverser")
+	public Object[][]testReverse(){
+		return new Object[][]{
+				{new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15},new int[]{
+					15,14,13,12,11,10,9,8,7,6,5,4,3,2,1}}	
+		};
+	}
+	/**
+	 * @param testArray an array containing test data.
+	 * @param expectedResult the result that is expected to be returned.
+	 */
+	@org.testng.annotations.Test(dataProvider = "arrayReverser")
+	public void testArrayReverser(int[]testArray, int[] expectedResult){
+		int[] actualResult = MathUtility.reverse(testArray);
+		Assert.assertEquals(actualResult, expectedResult, "Error");
+		System.err.println();
 	}
 }

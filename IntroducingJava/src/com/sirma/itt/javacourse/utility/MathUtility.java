@@ -86,4 +86,65 @@ public final class MathUtility{
 		int medyan = 0;
 		return medyan;
 	 }
+	 /**
+	  * QuickSort algorithm for sorting an array.
+	  * @param array An array for sorting.
+	  * @param left Left partition of the given array.
+	  * @param right Right partition of the given array.
+	  * @return returns a index.
+	  * 
+	  */
+	 public static int partition(int[] array, int left, int right)
+	 {
+	       int i = left;
+	       int j = right;
+	       int tmp;
+	       int pivot = array[(left + right) / 2];
+	       while (i <= j) {
+	             while (array[i] < pivot)
+	                   i++;
+	             while (array[j] > pivot)
+	                   j--;
+	             if (i <= j) {
+	                   tmp = array[i];
+	                   array[i] = array[j];
+	                   array[j] = tmp;
+	                   i++;
+	                   j--;
+	             }
+	       }
+       return i;
+	 }
+	 /**
+	  * QuickSort algorithm for sorting an array.
+	  * @param array An array for sorting.
+	  * @param left Left partition of the given array.
+	  * @param right Right partition of the given array.
+	  * @return returns a sorted array.
+	  * 
+	  */
+	 public static int[] quickSort(int[] array, int left, int right) {
+	       int index = partition(array, left, right);
+	       if (left < index - 1){
+	             quickSort(array, left, index - 1);
+	       }
+	       if (index < right){
+	             quickSort(array, index, right);
+	       }
+	       return array;
+	 }
+	 /**
+	  * 
+	  * @param array An array to reverse.
+	  * @return Return the reversed array.
+	  */
+	 public static int[] reverse(int[] array){
+		 int temp = 0;
+		 for(int i = 0, j = array.length -1; i < j; i++, j--){
+			 temp = array[i];
+			 array[i] = array[j];
+			 array[j] = temp;
+		 }
+		 return array;
+	 }
 }
