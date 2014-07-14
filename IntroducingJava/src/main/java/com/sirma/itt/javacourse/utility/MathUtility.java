@@ -5,11 +5,11 @@ package com.sirma.itt.javacourse.utility;
  * @author tpetrov
  * Contains calculation methods
  */
-public final class MathUtility{
+public final class MathUtility {
 	/**
 	 * 
 	 */
-	private MathUtility(){
+	private MathUtility() {
 	/**
 	 * Constructor.
 	 */	
@@ -20,10 +20,10 @@ public final class MathUtility{
 	 * @param numberB stores the second number.
 	 * @return returns the result of the calculation.
 	 */
-	 public static int calcGreatestCommonDivisor(int numberA, int numberB){
+	 public static int calcGreatestCommonDivisor(int numberA, int numberB) {
 		 int firstNumber = numberA;
 		 int secondNumber = numberB;
-		 while (firstNumber != secondNumber){
+		 while (firstNumber != secondNumber) {
 			 if (firstNumber > secondNumber) {
 				 firstNumber = firstNumber - secondNumber;
 			 } else { 
@@ -38,7 +38,7 @@ public final class MathUtility{
 	 * @param numberB stores the second number.
 	 * @return returns the result of the calculation.
 	  */
-	 public static int calcLeastCommonMultiplier(int numberA, int numberB){
+	 public static int calcLeastCommonMultiplier(int numberA, int numberB) {
 			return (numberA * numberB)/calcGreatestCommonDivisor(numberA, numberB);		
 		 }
 	 /**
@@ -46,11 +46,11 @@ public final class MathUtility{
 	  * @param array Stores an array varuable.
 	  * @return returns the index of the element with minimum value.
 	  */
-	 public static int getMinElement(int[] array){
+	 public static int getMinElement(int[] array) {
 		 
 		 int minElementIndex = 0;
-		 for (int i = minElementIndex; i < array.length; i++){
-			 if(array[minElementIndex] > array[i]){
+		 for (int i = minElementIndex; i < array.length; i++) {
+			 if(array[minElementIndex] > array[i]) {
 				 minElementIndex = i;
 			 }
 		 }
@@ -61,9 +61,9 @@ public final class MathUtility{
 	   @param array Stores an array varuable.
 	  * @return returns the sum of all elements in the array.
 	  */
-	 public static int sum(int[] array){
+	 public static int sum(int[] array) {
 		 int result = 0;
-		 for (int i = 0; i < array.length; i++){
+		 for (int i = 0; i < array.length; i++) {
 			 result+=array[i];
 		 }
 		 return result;
@@ -72,19 +72,20 @@ public final class MathUtility{
 	  * prints the array's elements to screen.
 	  * @param array Stores an array varuable.
 	  */
-	 public static void print(int [] array){
-		 for (int i = 0;i < array.length;i++){
+	 public static void print(int [] array) {
+		 for (int i = 0;i < array.length;i++) {
 			 System.out.println("Element myArray["+i+"] is: "+array[i]);
 		 }
 	 }
 	 /**
 	  * Finding an array's medyan.
 	  * @param array Stores an array varuable.
+	  * @param leftIndex the index of the first element of the array.
+	  * @param rightIndex the index of the last element of the array.
 	  * @return returns the array's medyan.
 	  */
-	 public static int findArraysMedyan(int[] array){
-		int medyan = 0;
-		return medyan;
+	 public static int findArraysMedyan(int[] array, int leftIndex, int rightIndex) {
+		return leftIndex + (rightIndex - leftIndex)/2;
 	 }
 	 
 	 /**
@@ -97,14 +98,14 @@ public final class MathUtility{
 	  */
 	 public static int[] quickSort(int[] array, int leftIndex, int rightIndex) {
 		 
-		 int pivot = leftIndex + (rightIndex - leftIndex)/2;
+		 int pivot = findArraysMedyan(array, leftIndex, rightIndex);
 		 if( array.length <= 1 ){
 			 return array;
 		 }
 		 else{			 
-			 for(int iterator = 0; iterator <= rightIndex; iterator++){
+			 for(int iterator = 0; iterator <= rightIndex; iterator++) {
 				 if(iterator != pivot){
-					 if(array[iterator] > array[pivot]){
+					 if(array[iterator] > array[pivot]) {
 						 int temp = array[pivot];
 						 array[pivot] = array[iterator];
 						 array[iterator] = temp;				 
@@ -122,14 +123,14 @@ public final class MathUtility{
 	  * @param array An array to reverse.
 	  * @return Return the reversed array.
 	  */
-	 public static int[] reverseArray(int[] array){
+	 public static int[] reverseArray(int[] array) {
 		 /**
 		  * @param temp Stores teporary data while exchanging values.
 		  */
 		 int temp = 0; 
 		 for(int firstIndex = 0, secondIndex = array.length -1;
 				 firstIndex < secondIndex;
-				 firstIndex++, secondIndex--){
+				 firstIndex++, secondIndex--) {
 			 temp = array[firstIndex];
 			 array[firstIndex] = array[secondIndex];
 			 array[secondIndex] = temp;

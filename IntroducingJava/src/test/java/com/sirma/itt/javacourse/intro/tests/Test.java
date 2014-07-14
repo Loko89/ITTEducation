@@ -32,8 +32,7 @@ public class Test {
 	public void greatComDiv(int firstNumber, int secondNumber, int expectedResult) {
 		
 		int actualResult = MathUtility.calcGreatestCommonDivisor(firstNumber, secondNumber);
-		Assert.assertEquals(actualResult, expectedResult, "some message");
-		System.err.println();
+		Assert.assertEquals(actualResult, expectedResult);
 	
 	}
 	/**
@@ -56,8 +55,7 @@ public class Test {
 	public void leastComDiv(int firstNumber, int secondNumber, int expectedResult) {
 
 		int actualResult = MathUtility.calcLeastCommonMultiplier(firstNumber, secondNumber);
-		Assert.assertEquals(actualResult, expectedResult, "some message");	
-		System.err.println();
+		Assert.assertEquals(actualResult, expectedResult);
 	}
 	/**
 	 * @return Object[][].
@@ -65,7 +63,7 @@ public class Test {
 	@DataProvider(name = "getMinElementIndex")
 	public Object[][] testGetMinElementIndex() {
 	 return new Object[][] {
-	   { new int[]{1,2,2}, 0 }
+	   { new int[]{1, 2, 2}, 0 }
 	 };
 	}
 	/**
@@ -73,9 +71,9 @@ public class Test {
 	 * @param expectedResult the result that is expected to be returned. 
 	 */
 	@org.testng.annotations.Test(dataProvider = "getMinElementIndex")
-	public void getMinElementIndex(int[] testArray, int expectedResult ){
+	public void getMinElementIndex(int[] testArray, int expectedResult) {
 		int actualResult = MathUtility.getMinElement(testArray);
-		Assert.assertEquals(actualResult, expectedResult, "Error");
+		Assert.assertEquals(actualResult, expectedResult);
 	
 	}
 	/**
@@ -84,7 +82,7 @@ public class Test {
 	@DataProvider(name = "getSumOfTheElements")
 	public Object[][] testGetSumOfTheElements() {
 	 return new Object[][] {
-	   { new int[]{6,3,8}, 17 }
+	   { new int[]{6, 3, 8}, 17 }
 	 };
 	}
 	/**
@@ -94,9 +92,7 @@ public class Test {
 	@org.testng.annotations.Test(dataProvider = "getSumOfTheElements")
 	public void getSumOfTheElements(int[] testArray, int expectedResult){	
 		int actualResult = MathUtility.sum(testArray);
-		Assert.assertEquals(actualResult, expectedResult, "Error");
-		System.err.println();
-		
+		Assert.assertEquals(actualResult, expectedResult);
 	}
 	/**
 	 * 
@@ -105,10 +101,10 @@ public class Test {
 	@DataProvider(name = "arrayReverser")
 	public Object[][]testReverse(){
 		return new Object[][]{
-				{new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15},new int[]{
-					15,14,13,12,11,10,9,8,7,6,5,4,3,2,1}},
-				{new int[]{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15},new int[]{
-						15,1,13,12,11,10,9,8,7,6,5,4,3,2,14}}
+				{new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15},
+					new int[] {15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1} },
+				{new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15},
+					new int[] {15, 1, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 14} }
 		};
 	}
 	/**
@@ -116,9 +112,8 @@ public class Test {
 	 * @param expectedResult the result that is expected to be returned.
 	 */
 	@org.testng.annotations.Test(dataProvider = "arrayReverser")
-	public void testArrayReverser(int[]testArray, int[] expectedResult){
+	public void testArrayReverser(int[] testArray, int[] expectedResult){
 		int[] actualResult = MathUtility.reverseArray(testArray);
-		Assert.assertEquals(actualResult, expectedResult, "Error");
-		System.err.println();
+		Assert.assertEquals(actualResult, expectedResult);
 	}
 }
