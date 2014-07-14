@@ -3,22 +3,21 @@ import java.util.Scanner;
 
 import com.sirma.itt.javacourse.utility.MathUtility;
 /**
- * Program for sorting an array using QuickSort algorithm.
+ * Program for finding an array's medyan.
  * @author tpetrov
  *
  */
-public final class QuickSort {
+public final class ArrayReverse {
 	/**
 	 * Constructor.
 	 */
-	private QuickSort(){
+	private ArrayReverse(){
 		
 	}
 	/**
 	 * 
 	 * @param args global param.
 	 */
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
@@ -27,7 +26,7 @@ public final class QuickSort {
 			System.out.printf("Input myArray["+iterator+"]: ");
 			myArray[iterator] = input.nextInt();
 		}
-		myArray = MathUtility.quickSort(myArray);
+		myArray = MathUtility.reverseArray(myArray);
 		for (int i =0; i<myArray.length;i++ ){
 			System.out.printf(myArray[i]+",");
 		}

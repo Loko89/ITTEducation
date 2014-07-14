@@ -117,7 +117,7 @@ public class Test {
 	 */
 	@org.testng.annotations.Test(dataProvider = "arrayReverser")
 	public void testArrayReverser(int[]testArray, int[] expectedResult){
-		int[] actualResult = MathUtility.reverse(testArray);
+		int[] actualResult = MathUtility.reverseArray(testArray);
 		Assert.assertEquals(actualResult, expectedResult, "Error");
 		System.err.println();
 	}

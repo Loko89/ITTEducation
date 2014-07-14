@@ -24,10 +24,11 @@ public final class MathUtility{
 		 int c = a;
 		 int d = b;
 		 while (c != d){
-			 if (c > d)
+			 if (c > d) {
 				 c = c - d;
-			 else 
+			 } else { 
 				 d = d - c;
+			 }
 		 }
 		 return c;
 	}
@@ -90,49 +91,43 @@ public final class MathUtility{
 	 /**
 	  * QuickSort algorithm for sorting an array.
 	  * @param array An array for sorting.
+	  * @param leftIndex The index of the first element of the array.
+	  * @param rightIndex The index of the last element of the array.
 	  * @return returns a sorted array.
 	  * 
 	  */
-	 public static int[] quickSort(int[] array) {
-		 	int[] low = new int[array.length/2];
-		 	int[] high = new int[array.length/2];
-		 	int j = 0;
-		 	int k = 0;
-	       	int pivot = array[array.length/2];
-	       	if (array.length == 0){
-	       		return array;
-	       	}
-	       	else{
-	       		for(int i = 0; i <array.length && i != pivot ;i++){
-	       			if (array[i]<array[pivot]){
-	       				low[j] = array[i];
-	       				j++;
-	       			}
-	       			else{
-	       				high[k] = array[i];
-	       				k++;
-	       			}
-	       		}
-	       		quickSort(low);
-	       		quickSort(high);
-	       		for(int i = 0; i < array.length; i++){
-	       			if (i < array.length/2){
-	       				array[i] = low[i];
-	       			}
-	       			else{
-	       				array[i] = high[i-array.length/2];
-	       			}
-	       		}
-	       		return array;
-	       	}
+	 public static int[] quickSort(int[] array, int leftIndex, int rightIndex) {
+		 
+		 int pivot = leftIndex + (rightIndex - leftIndex)/2;
+		 if( array.length <= 1 ){
+			 return array;
+		 }
+		 else{			 
+			 for(int iterator = 0; iterator <= rightIndex; iterator++){
+				 if(iterator != pivot){
+					 if(array[iterator] > array[pivot]){
+						 int temp = array[pivot];
+						 array[pivot] = array[iterator];
+						 array[iterator] = temp;				 
+					 }
+				 }
+			 }
+		 }
+		 quickSort(array, leftIndex, pivot-1);
+		 quickSort(array, pivot, rightIndex-1);
+		 return array;
 	 }
+	
 	 /**
 	  * 
 	  * @param array An array to reverse.
 	  * @return Return the reversed array.
 	  */
-	 public static int[] reverse(int[] array){
-		 int temp = 0;
+	 public static int[] reverseArray(int[] array){
+		 /**
+		  * @param temp Stores teporary data while exchanging values.
+		  */
+		 int temp = 0; 
 		 for(int i = 0, j = array.length -1; i < j; i++, j--){
 			 temp = array[i];
 			 array[i] = array[j];
