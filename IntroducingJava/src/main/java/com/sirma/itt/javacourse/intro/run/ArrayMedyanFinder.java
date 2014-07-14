@@ -19,14 +19,13 @@ public final class ArrayMedyanFinder {
 	 * @param args global param.
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
-		int[]myArray = new int[15];
-		for(int iterator = 0; iterator < myArray.length; iterator++ ){
-			System.out.printf("Input myArray["+iterator+"]: ");
+		int[] myArray = new int[15];
+		for (int iterator = 0; iterator < myArray.length; iterator++ ){
+			System.out.printf("Input myArray[" + iterator + "]: ");
 			myArray[iterator] = input.nextInt();
 		}
-		System.out.println("The Array's medyan is "+MathUtility.findArraysMedyan(myArray));
+		System.out.println("The Array's medyan is " + MathUtility.findArraysMedyan(myArray));
 		input.close();
 	}
 

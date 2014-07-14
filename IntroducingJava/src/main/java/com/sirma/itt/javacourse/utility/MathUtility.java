@@ -16,31 +16,30 @@ public final class MathUtility{
 	}
 	/**
 	 * Calculates the greates common divisor of two integers.
-	 * @param a stores the first number.
-	 * @param b stores the second number.
+	 * @param numberA stores the first number.
+	 * @param numberB stores the second number.
 	 * @return returns the result of the calculation.
 	 */
-	 public static int calcGreatestCommonDivisor(int a, int b){
-		 int c = a;
-		 int d = b;
-		 while (c != d){
-			 if (c > d) {
-				 c = c - d;
+	 public static int calcGreatestCommonDivisor(int numberA, int numberB){
+		 int firstNumber = numberA;
+		 int secondNumber = numberB;
+		 while (firstNumber != secondNumber){
+			 if (firstNumber > secondNumber) {
+				 firstNumber = firstNumber - secondNumber;
 			 } else { 
-				 d = d - c;
+				 secondNumber = secondNumber - firstNumber;
 			 }
 		 }
-		 return c;
+		 return firstNumber;
 	}
 	 /**
 	 * Calculates the least common multiplier of two integers.
-	 * @param a stores the first number.
-	 * @param b stores the second number.
+	 * @param numberA stores the first number.
+	 * @param numberB stores the second number.
 	 * @return returns the result of the calculation.
 	  */
-	 public static int calcLeastCommonMultiplier(int a, int b){
-			int c = (a * b)/calcGreatestCommonDivisor(a, b);
-			return c;
+	 public static int calcLeastCommonMultiplier(int numberA, int numberB){
+			return (numberA * numberB)/calcGreatestCommonDivisor(numberA, numberB);		
 		 }
 	 /**
 	  * 
@@ -50,7 +49,7 @@ public final class MathUtility{
 	 public static int getMinElement(int[] array){
 		 
 		 int minElementIndex = 0;
-		 for(int i = minElementIndex; i < array.length; i++){
+		 for (int i = minElementIndex; i < array.length; i++){
 			 if(array[minElementIndex] > array[i]){
 				 minElementIndex = i;
 			 }
@@ -64,7 +63,7 @@ public final class MathUtility{
 	  */
 	 public static int sum(int[] array){
 		 int result = 0;
-		 for (int i = 0;i < array.length;i++){
+		 for (int i = 0; i < array.length; i++){
 			 result+=array[i];
 		 }
 		 return result;
@@ -83,7 +82,7 @@ public final class MathUtility{
 	  * @param array Stores an array varuable.
 	  * @return returns the array's medyan.
 	  */
-	 public static int findArraysMedyan(int[]array){
+	 public static int findArraysMedyan(int[] array){
 		int medyan = 0;
 		return medyan;
 	 }
@@ -128,10 +127,12 @@ public final class MathUtility{
 		  * @param temp Stores teporary data while exchanging values.
 		  */
 		 int temp = 0; 
-		 for(int i = 0, j = array.length -1; i < j; i++, j--){
-			 temp = array[i];
-			 array[i] = array[j];
-			 array[j] = temp;
+		 for(int firstIndex = 0, secondIndex = array.length -1;
+				 firstIndex < secondIndex;
+				 firstIndex++, secondIndex--){
+			 temp = array[firstIndex];
+			 array[firstIndex] = array[secondIndex];
+			 array[secondIndex] = temp;
 		 }
 		 return array;
 	 }

@@ -20,13 +20,12 @@ public final class LeastCommonMultiplier {
 	 */
  
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
 		System.out.print("Input X: ");
 		int x = input.nextInt(); 				
 		System.out.print("Imput Y: ");
 		int y = input.nextInt();				
-		System.out.println("The leas common multiplier of "+x+" and "+y+" is: "+MathUtility.calcLeastCommonMultiplier(x, y));
+		System.out.println("The leas common multiplier of " + x + " and " + y + " is: " + MathUtility.calcLeastCommonMultiplier(x, y));
 		input.close();
 	}
 

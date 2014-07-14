@@ -20,16 +20,15 @@ public final class QuickSort {
 	 */
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
-		int[]myArray = new int[15];
-		for(int iterator = 0; iterator < myArray.length; iterator++ ){
-			System.out.printf("Input myArray["+iterator+"]: ");
+		int[] myArray = new int[15];
+		for (int iterator = 0; iterator < myArray.length; iterator++ ){
+			System.out.printf("Input myArray[" + iterator + "]: ");
 			myArray[iterator] = input.nextInt();
 		}
 		myArray = MathUtility.quickSort(myArray, 0, myArray.length-1);
-		for (int i =0; i<myArray.length;i++ ){
-			System.out.printf(myArray[i]+",");
+		for (int i = 0; i < myArray.length; i++ ){
+			System.out.printf(myArray[i] + ", ");
 		}
 		input.close();
 	}
