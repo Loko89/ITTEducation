@@ -79,13 +79,35 @@ public final class MathUtility {
 	 }
 	 /**
 	  * Finding an array's medyan.
-	  * @param array Stores an array varuable.
+	  * @param array an array variable.
 	  * @param leftIndex the index of the first element of the array.
 	  * @param rightIndex the index of the last element of the array.
 	  * @return returns the array's medyan.
 	  */
-	 public static int findArraysMedyan(int[] array, int leftIndex, int rightIndex) {
-		return leftIndex + (rightIndex - leftIndex)/2;
+	 public static int findArraysMedian(int[] array, int leftIndex, int rightIndex) { 
+	        int mid = (leftIndex+rightIndex)/2; 
+	        int index = partition(array,leftIndex,rightIndex); 
+	        while( index != mid){ 
+	            if(index < mid) { 
+	                index = partition(array,mid,rightIndex);
+	            } else {
+	            	index = partition(array,leftIndex,mid); 
+	            }
+	        } 
+	        return index; 
+	    }
+	 /**
+	  * 
+	  * @param firstNumber first number to be swapped.
+	  * @param secondNumber second number to be swapped.
+	  */
+	 public static void swap(Integer firstNumber, Integer secondNumber ) {
+		 
+		 int temp1 = firstNumber;
+		 int temp2 = secondNumber;
+		
+		 firstNumber = temp2;
+		 secondNumber = temp1;
 	 }
 	 
 	 /**
@@ -97,24 +119,29 @@ public final class MathUtility {
 	  * 
 	  */
 	 public static int[] quickSort(int[] array, int leftIndex, int rightIndex) {
-		 
-		 int pivot = findArraysMedyan(array, leftIndex, rightIndex);
-		 if( array.length <= 1 ){
+		 if (array.length <= 1) {
 			 return array;
-		 }
-		 else{			 
-			 for(int iterator = 0; iterator <= rightIndex; iterator++) {
-				 if(iterator != pivot){
-					 if(array[iterator] > array[pivot]) {
-						 int temp = array[pivot];
-						 array[pivot] = array[iterator];
-						 array[iterator] = temp;				 
-					 }
+		 } else {
+			 int pivotIndex = findArraysMedian(array, leftIndex, rightIndex);
+			 swap(array[pivotIndex], array[leftIndex]);
+			 int lowIndex = leftIndex + 1;
+			 int highIndex = rightIndex;
+			 while (lowIndex <= highIndex) {
+				 if (array[lowIndex] <= array[leftIndex]) {
+					 lowIndex++;
 				 }
+				 if (array[highIndex] >= array[leftIndex]) {
+					 highIndex--;
+				 }
+				 if ((array[lowIndex] > array[leftIndex])
+						 &&(array[highIndex] < array[leftIndex])) {
+					 swap(array[lowIndex], array[highIndex]);
+				 }
+				 swap(array[leftIndex], array[highIndex]);
 			 }
+			 quickSort(array, leftIndex, highIndex);
+			 quickSort(array, highIndex, rightIndex);
 		 }
-		 quickSort(array, leftIndex, pivot-1);
-		 quickSort(array, pivot, rightIndex-1);
 		 return array;
 	 }
 	
@@ -137,4 +164,31 @@ public final class MathUtility {
 		 }
 		 return array;
 	 }
+	 /**
+	  * 
+	  * @param array an array varuable.
+	  * @param leftIndex the index of the first element in the array.
+	  * @param rightIndex leftIndex the index of the last element in the array.
+	  * @return the middle element
+	  */
+	 public static int partition(int[] array, int leftIndex, int rightIndex ) { 
+	        int pivot = (leftIndex+rightIndex)/2; 
+	        int temp; 
+	        while(leftIndex <= rightIndex) { 
+	            while(array[leftIndex] < array[pivot]) { 
+	                leftIndex++; 
+	            }
+	            while(array[rightIndex] > array[pivot]) {
+	                rightIndex--; 
+	            }
+	            if(leftIndex <= rightIndex){ 
+	                temp = array[leftIndex]; 
+	                array[leftIndex]=array[rightIndex]; 
+	                array[rightIndex] = temp; 
+	                leftIndex++;rightIndex--; 
+	            } 
+	        } 
+	        return pivot; 
+	    } 
+
 }
