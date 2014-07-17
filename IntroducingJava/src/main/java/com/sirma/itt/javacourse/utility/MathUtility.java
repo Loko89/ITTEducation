@@ -23,6 +23,13 @@ public final class MathUtility {
 	 public static int calcGreatestCommonDivisor(int numberA, int numberB) {
 		 int firstNumber = numberA;
 		 int secondNumber = numberB;
+		 
+		 if (firstNumber < 0){
+			 firstNumber *= -1;
+		 }
+		 if (secondNumber < 0) {
+			 secondNumber *= -1;
+		 }
 		 while (firstNumber != secondNumber) {
 			 if (firstNumber > secondNumber) {
 				 firstNumber = firstNumber - secondNumber;
@@ -39,7 +46,17 @@ public final class MathUtility {
 	 * @return returns the result of the calculation.
 	  */
 	 public static int calcLeastCommonMultiplier(int numberA, int numberB) {
-			return (numberA * numberB)/calcGreatestCommonDivisor(numberA, numberB);		
+		 
+		 int firstNumber = numberA;
+		 int secondNumber = numberB;
+		 
+		 if (firstNumber < 0){
+			 firstNumber *= -1;
+		 }
+		 if (secondNumber < 0) {
+			 secondNumber *= -1;
+		 }
+			return (firstNumber * secondNumber)/calcGreatestCommonDivisor(numberA, numberB);		
 		 }
 	 /**
 	  * 
@@ -64,7 +81,7 @@ public final class MathUtility {
 	 public static int sum(int[] array) {
 		 int result = 0;
 		 for (int i = 0; i < array.length; i++) {
-			 result+=array[i];
+			 result += array[i];
 		 }
 		 return result;
 	 }
@@ -73,28 +90,53 @@ public final class MathUtility {
 	  * @param array Stores an array varuable.
 	  */
 	 public static void print(int [] array) {
-		 for (int i = 0;i < array.length;i++) {
-			 System.out.println("Element myArray["+i+"] is: "+array[i]);
+		 for (int i = 0; i < array.length;i++) {
+			 System.out.println("Element myArray[" + i + "] is: " + array[i]);
 		 }
 	 }
 	 /**
 	  * Finding an array's medyan.
 	  * @param array an array variable.
-	  * @param leftIndex the index of the first element of the array.
-	  * @param rightIndex the index of the last element of the array.
 	  * @return returns the array's medyan.
 	  */
-	 public static int findArraysMedian(int[] array, int leftIndex, int rightIndex) { 
-	        int mid = (leftIndex+rightIndex)/2; 
-	        int index = partition(array,leftIndex,rightIndex); 
-	        while( index != mid){ 
-	            if(index < mid) { 
-	                index = partition(array,mid,rightIndex);
-	            } else {
-	            	index = partition(array,leftIndex,mid); 
-	            }
-	        } 
-	        return index; 
+	 public static int findArraysMedian(int[] array) { 
+		 
+		 int arrayPointer = 0;
+		 int medianIndex = 0;
+		 int difference = 0;
+		 int smallestDifference = 0;
+		 int lowValue = 0;
+		 int highValue = 0;
+		 
+		 if (array.length <= 1) {
+			 return arrayPointer;
+		 } else {
+			for (int iterator = 0; iterator < array.length; iterator++){
+				smallestDifference += array[iterator];
+			}
+			for (arrayPointer = 1; arrayPointer < array.length - 1; arrayPointer++) {
+				for (int iterator = 0; iterator < arrayPointer; iterator ++) {
+					lowValue += array[iterator];
+				}
+				for (int iterator = arrayPointer + 1; iterator < array.length; iterator ++) {
+					highValue += array[iterator];
+				}
+				if ( highValue > lowValue){
+					difference = highValue - lowValue;
+					lowValue = 0;
+					highValue = 0;					
+				} else {
+					difference = lowValue - highValue;
+					lowValue = 0;
+					highValue = 0;
+				}
+				if (smallestDifference > difference) {
+					smallestDifference = difference;
+					medianIndex = arrayPointer;
+				}
+			}
+		 }
+		 return medianIndex + 1;
 	    }
 	 /**
 	  * 
@@ -121,26 +163,6 @@ public final class MathUtility {
 	 public static int[] quickSort(int[] array, int leftIndex, int rightIndex) {
 		 if (array.length <= 1) {
 			 return array;
-		 } else {
-			 int pivotIndex = findArraysMedian(array, leftIndex, rightIndex);
-			 swap(array[pivotIndex], array[leftIndex]);
-			 int lowIndex = leftIndex + 1;
-			 int highIndex = rightIndex;
-			 while (lowIndex <= highIndex) {
-				 if (array[lowIndex] <= array[leftIndex]) {
-					 lowIndex++;
-				 }
-				 if (array[highIndex] >= array[leftIndex]) {
-					 highIndex--;
-				 }
-				 if ((array[lowIndex] > array[leftIndex])
-						 &&(array[highIndex] < array[leftIndex])) {
-					 swap(array[lowIndex], array[highIndex]);
-				 }
-				 swap(array[leftIndex], array[highIndex]);
-			 }
-			 quickSort(array, leftIndex, highIndex);
-			 quickSort(array, highIndex, rightIndex);
 		 }
 		 return array;
 	 }
@@ -164,31 +186,4 @@ public final class MathUtility {
 		 }
 		 return array;
 	 }
-	 /**
-	  * 
-	  * @param array an array varuable.
-	  * @param leftIndex the index of the first element in the array.
-	  * @param rightIndex leftIndex the index of the last element in the array.
-	  * @return the middle element
-	  */
-	 public static int partition(int[] array, int leftIndex, int rightIndex ) { 
-	        int pivot = (leftIndex+rightIndex)/2; 
-	        int temp; 
-	        while(leftIndex <= rightIndex) { 
-	            while(array[leftIndex] < array[pivot]) { 
-	                leftIndex++; 
-	            }
-	            while(array[rightIndex] > array[pivot]) {
-	                rightIndex--; 
-	            }
-	            if(leftIndex <= rightIndex){ 
-	                temp = array[leftIndex]; 
-	                array[leftIndex]=array[rightIndex]; 
-	                array[rightIndex] = temp; 
-	                leftIndex++;rightIndex--; 
-	            } 
-	        } 
-	        return pivot; 
-	    } 
-
 }

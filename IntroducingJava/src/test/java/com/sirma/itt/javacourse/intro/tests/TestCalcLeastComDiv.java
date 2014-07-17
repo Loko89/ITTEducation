@@ -18,7 +18,10 @@ public class TestCalcLeastComDiv {
 	@DataProvider(name = "LeastComMult")
 	public Object[][] testCalcLeastCommonMultiplier() {
 	 return new Object[][] {
-	   { 10, 15, 30 }
+	   { 10, 15, 30 },
+	   { -6, 9, 18},
+	   { 8, -10, 40},
+	   { -6, -14, 42}
 	 };
 	}
 	/**

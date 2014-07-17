@@ -19,7 +19,10 @@ public class TestGreatComDiv {
 		@DataProvider(name = "GrComDiv")
 		public Object[][] testCalcGreatestCommonDivisor() {
 		 return new Object[][] {
-		   { 10, 15, 5 }
+		   { 10, 15, 5 },
+		   { -10, -15, 5},
+		   { -10, 15, 5},
+		   { 10, -15, 5}
 		 };
 		}
 		

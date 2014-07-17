@@ -13,6 +13,15 @@ import com.sirma.itt.javacourse.utility.MathUtility;
 public class TestGetMinElementIndex {
 	
 	/**
+	 * @return Object[][].
+	 */
+	@DataProvider(name = "getMinElementIndex")
+	public Object[][] testGetMinElementIndex() {
+	 return new Object[][] {
+	   { new int[]{1, 2, 2}, 0 }
+	 };
+	}
+	/**
 	 * @param testArray an array containing test data.
 	 * @param expectedResult the result that is expected to be returned. 
 	 */
@@ -23,13 +32,5 @@ public class TestGetMinElementIndex {
 	
 	}
 	
-	/**
-	 * @return Object[][].
-	 */
-	@DataProvider(name = "getMinElementIndex")
-	public Object[][] testGetMinElementIndex() {
-	 return new Object[][] {
-	   { new int[]{1, 2, 2}, 0 }
-	 };
-	}
+	
 }
