@@ -25,9 +25,9 @@ public final class ArrayMedyanFinder {
 			System.out.printf("Input myArray[" + iterator + "]: ");
 			myArray[iterator] = input.nextInt();
 		}
+		int median = MathUtility.findArraysMedian(myArray);
 		System.out.println("The Array's medyan is an element with index "
-		+ MathUtility.findArraysMedian(myArray) + "\n" + " and value " 
-				+ myArray[MathUtility.findArraysMedian(myArray)]);
+		+ median + "\n" + " and value " + median);
 		input.close();
 	}
 

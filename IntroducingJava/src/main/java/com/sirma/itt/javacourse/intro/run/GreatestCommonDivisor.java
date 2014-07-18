@@ -9,7 +9,7 @@ import com.sirma.itt.javacourse.utility.MathUtility;
  */
 public final class GreatestCommonDivisor {
 /**
- * 
+ * Constructor.
  */
 	private GreatestCommonDivisor(){
 		

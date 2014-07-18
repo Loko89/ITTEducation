@@ -26,7 +26,7 @@ public class TestArrayMedianFinder {
 	 * @param expectedResult Expected result.
 	 */
 	@org.testng.annotations.Test(dataProvider = "MedianFinder")
-	public void leastComDiv(int[] array, int expectedResult) {
+	public void testMedianFinder(int[] array, int expectedResult) {
 
 		int actualResult = MathUtility.findArraysMedian(array);
 		Assert.assertEquals(actualResult, expectedResult);

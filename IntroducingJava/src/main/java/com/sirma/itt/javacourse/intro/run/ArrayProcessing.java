@@ -8,7 +8,7 @@ import com.sirma.itt.javacourse.utility.MathUtility;
  */
 public final class ArrayProcessing {
 /**
- * 
+ * Constructor.
  */
 	private ArrayProcessing(){
 		

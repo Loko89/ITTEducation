@@ -9,18 +9,16 @@ import com.sirma.itt.javacourse.utility.MathUtility;
  * @author tpetrov
  *
  */
-
-public class TestArrayReverser {
-	
+public class TestQuickSort {
 	/**
 	 * 
 	 * @return Object[][]
 	 */
-	@DataProvider(name = "arrayReverser")
-	public Object[][]testReverse(){
+	@DataProvider(name = "quickSort")
+	public Object[][]testQuickSortAlgorithm(){
 		return new Object[][]{
-				{new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15},
-					new int[] {15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1}
+				{	new int[] {5, 8, 1, 3, 9, 4, 2, 6, 7, 0},
+					new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
 				}
 		};
 	}
@@ -28,9 +26,9 @@ public class TestArrayReverser {
 	 * @param testArray an array containing test data.
 	 * @param expectedResult the result that is expected to be returned.
 	 */
-	@org.testng.annotations.Test(dataProvider = "arrayReverser")
-	public void testArrayReverser(int[] testArray, int[] expectedResult){
-		int[] actualResult = MathUtility.reverseArray(testArray);
+	@org.testng.annotations.Test(dataProvider = "quickSort")
+	public void testQuickSort(int[] testArray, int[] expectedResult){
+		int[] actualResult = MathUtility.quickSort(testArray, 0, testArray.length);
 		Assert.assertEquals(actualResult, expectedResult);
 	}
 

@@ -26,7 +26,7 @@ public final class QuickSort {
 			System.out.printf("Input myArray[" + iterator + "]: ");
 			myArray[iterator] = input.nextInt();
 		}
-		myArray = MathUtility.quickSort(myArray, 0, (myArray.length - 1));
+		myArray = MathUtility.quickSort(myArray, 0, myArray.length - 1);
 		for (int i = 0; i < myArray.length; i++ ) {
 			System.out.printf(myArray[i] + ", ");
 		}

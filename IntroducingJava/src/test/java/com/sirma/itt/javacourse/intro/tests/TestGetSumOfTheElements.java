@@ -12,15 +12,6 @@ import com.sirma.itt.javacourse.utility.MathUtility;
 
 public class TestGetSumOfTheElements {
 	
-	/**
-	 * @param testArray an array containing test data.
-	 * @param expectedResult the result that is expected to be returned. 
-	 */
-	@org.testng.annotations.Test(dataProvider = "getSumOfTheElements")
-	public void getSumOfTheElements(int[] testArray, int expectedResult){	
-		int actualResult = MathUtility.sum(testArray);
-		Assert.assertEquals(actualResult, expectedResult);
-	}
 	
 	/**
 	 * @return Object[][].
@@ -31,5 +22,13 @@ public class TestGetSumOfTheElements {
 	   { new int[]{6, 3, 8}, 17 }
 	 };
 	}
-
+	/**
+	 * @param testArray an array containing test data.
+	 * @param expectedResult the result that is expected to be returned. 
+	 */
+	@org.testng.annotations.Test(dataProvider = "getSumOfTheElements")
+	public void getSumOfTheElements(int[] testArray, int expectedResult){	
+		int actualResult = MathUtility.sum(testArray);
+		Assert.assertEquals(actualResult, expectedResult);
+	}
 }
