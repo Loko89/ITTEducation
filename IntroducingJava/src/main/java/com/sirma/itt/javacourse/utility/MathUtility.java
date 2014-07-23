@@ -156,13 +156,27 @@ public final class MathUtility {
 	 *            An array for sorting.
 	 * @return returns a sorted array.
 	 */
+
 	public static int[] quickSort(int[] array, int leftIndex, int rightIndex) {
 		
 		if (array.length <= 1) {
 			return array;
 		} else {
 			int pivot = findArraysMedian(array);
-				
+			int pivotValue = array[pivot];
+			int left = leftIndex;
+			
+			swap(array, pivot, rightIndex);
+			
+			for (int iterator = 0; iterator < rightIndex; iterator++) {
+				if (array[iterator] < pivotValue) {
+					swap(array, iterator, left);
+					left++;
+				}
+			}
+			swap(array, left, rightIndex);
+			pivot = left;
+			
 			quickSort(array, leftIndex, pivot);
 			quickSort(array, pivot, rightIndex);
 		}

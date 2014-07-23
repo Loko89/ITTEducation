@@ -2,28 +2,28 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="78" started-at="2014-07-18T10:33:38Z" finished-at="2014-07-18T10:33:39Z">
+  <suite name="Default suite" duration-ms="125" started-at="2014-07-23T13:31:40Z" finished-at="2014-07-23T13:31:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="78" started-at="2014-07-18T10:33:38Z" finished-at="2014-07-18T10:33:39Z">
+    <test name="Default test" duration-ms="125" started-at="2014-07-23T13:31:40Z" finished-at="2014-07-23T13:31:40Z">
       <class name="com.sirma.itt.javacourse.intro.tests.TestQuickSort">
-        <test-method status="FAIL" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="31" started-at="2014-07-18T13:33:39Z" data-provider="quickSort" finished-at="2014-07-18T13:33:39Z">
+        <test-method status="FAIL" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@5cb0bb]" name="testQuickSort" duration-ms="16" started-at="2014-07-23T16:31:40Z" data-provider="quickSort" finished-at="2014-07-23T16:31:40Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[I@bf711e]]>
+                <![CDATA[[I@9b7336]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[I@9b7336]]>
+                <![CDATA[[I@1a8f100]]>
               </value>
             </param>
           </params>
           <exception class="java.lang.StackOverflowError">
             <full-stacktrace>
               <![CDATA[java.lang.StackOverflowError
-	at com.sirma.itt.javacourse.utility.MathUtility.quickSort(MathUtility.java:162)
+	at com.sirma.itt.javacourse.utility.MathUtility.quickSort(MathUtility.java:165)
 	at com.sirma.itt.javacourse.utility.MathUtility.quickSort(MathUtility.java:180)
 	at com.sirma.itt.javacourse.utility.MathUtility.quickSort(MathUtility.java:180)
 	at com.sirma.itt.javacourse.utility.MathUtility.quickSort(MathUtility.java:180)

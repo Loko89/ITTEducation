@@ -28,7 +28,7 @@ public class TestQuickSort {
 	 */
 	@org.testng.annotations.Test(dataProvider = "quickSort")
 	public void testQuickSort(int[] testArray, int[] expectedResult){
-		int[] actualResult = MathUtility.quickSort(testArray, 0, testArray.length);
+		int[] actualResult = MathUtility.quickSort(testArray, 0, testArray.length - 1);
 		Assert.assertEquals(actualResult, expectedResult);
 	}
 
