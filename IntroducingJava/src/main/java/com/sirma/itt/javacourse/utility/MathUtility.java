@@ -159,26 +159,33 @@ public final class MathUtility {
 
 	public static int[] quickSort(int[] array, int leftIndex, int rightIndex) {
 		
-		if (array.length <= 1) {
-			return array;
+		if ((rightIndex - leftIndex)<= 1) {
+			if (((rightIndex - leftIndex) == 1)&& (array[leftIndex] > array[rightIndex])) {
+				swap(array, leftIndex, rightIndex);
+			}
+			return array;			
 		} else {
-			int pivot = findArraysMedian(array);
-			int pivotValue = array[pivot];
+			int pivot = rightIndex;
 			int left = leftIndex;
+			int right = rightIndex - 1;
 			
-			swap(array, pivot, rightIndex);
-			
-			for (int iterator = 0; iterator < rightIndex; iterator++) {
-				if (array[iterator] < pivotValue) {
-					swap(array, iterator, left);
+			while (left <= right) {
+				while (array[left] < array[pivot]){
 					left++;
 				}
+				while (array[right] > array[pivot]) {
+					right--;
+				}
+				if ((array[left] > array[pivot]) 
+						&&(array[right] < array[pivot]) 
+						&& (left <= right)) {
+					swap(array, left, right);
+				}
 			}
-			swap(array, left, rightIndex);
+			swap(array, pivot, left);
 			pivot = left;
-			
-			quickSort(array, leftIndex, pivot);
-			quickSort(array, pivot, rightIndex);
+			quickSort(array, leftIndex, pivot - 1);
+			quickSort(array, pivot + 1, rightIndex);
 		}
 		return array;
 	}
@@ -189,10 +196,7 @@ public final class MathUtility {
 	 * @return Return the reversed array.
 	 */
 	public static int[] reverseArray(int[] array) {
-		/**
-		 * @param temp
-		 *            Stores teporary data while exchanging values.
-		 */
+		
 		int temp = 0;
 		for (int firstIndex = 0, secondIndex = array.length - 1; firstIndex < secondIndex; firstIndex++, secondIndex--) {
 			temp = array[firstIndex];
@@ -200,5 +204,31 @@ public final class MathUtility {
 			array[secondIndex] = temp;
 		}
 		return array;
+	}
+	/**
+	 * Finding an array's medyan in given range of elements.
+	 * @param array
+	 *            an array variable.
+	 * @param leftIndex
+	 * 				  the index of the first element in the array
+	 * @param rightIndex
+	 * 				   the index of the last element in the array            
+	 * @return returns the array's median in the given range of elements.
+	 */
+	public static int findMedianInRange(int[] array, int leftIndex, int rightIndex){
+		
+		int counter = 0;
+		for (int iterator = leftIndex; iterator <= rightIndex; iterator++ ) {
+			counter++;
+		}
+		int[] cluster = new int[counter];
+		counter = 0;
+		
+		for (int iterator = leftIndex; iterator <= rightIndex; iterator++ ) {
+			cluster[counter] = array[iterator];
+			counter++;
+		}
+		int median = findArraysMedian(cluster);
+		return median;
 	}
 }

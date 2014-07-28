@@ -17,8 +17,12 @@ public class TestQuickSort {
 	@DataProvider(name = "quickSort")
 	public Object[][]testQuickSortAlgorithm(){
 		return new Object[][]{
-				{	new int[] {5, 8, 1, 3, 9, 4, 2, 6, 7, 0},
+				{	new int[] {5, 8, 1, 3, 9, 0, 2, 6, 7, 4},
 					new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+				},
+				{
+					new int[] {55, 10, 36, 78, 21, 94, 96, 25, 22},
+					new int[] {10, 21, 22, 25, 36, 55, 78, 94, 96}
 				}
 		};
 	}

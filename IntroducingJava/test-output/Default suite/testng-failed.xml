@@ -5,7 +5,7 @@
     <classes>
       <class name="com.sirma.itt.javacourse.intro.tests.TestQuickSort">
         <methods>
-          <include name="testQuickSort" invocation-numbers="0"/>
+          <include name="testQuickSort" invocation-numbers="0 1"/>
         </methods>
       </class> <!-- com.sirma.itt.javacourse.intro.tests.TestQuickSort -->
     </classes>
