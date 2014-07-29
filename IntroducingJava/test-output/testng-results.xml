@@ -1,45 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="62" started-at="2014-07-28T06:59:15Z" finished-at="2014-07-28T06:59:15Z">
+  <suite name="Default suite" duration-ms="47" started-at="2014-07-29T08:11:06Z" finished-at="2014-07-29T08:11:06Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="62" started-at="2014-07-28T06:59:15Z" finished-at="2014-07-28T06:59:15Z">
-      <class name="com.sirma.itt.javacourse.intro.tests.TestQuickSort">
-        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@5cb0bb]" name="testQuickSort" duration-ms="16" started-at="2014-07-28T09:59:15Z" data-provider="quickSort" finished-at="2014-07-28T09:59:15Z">
+    <test name="Default test" duration-ms="47" started-at="2014-07-29T08:11:06Z" finished-at="2014-07-29T08:11:06Z">
+      <class name="com.sirma.itt.javacourse.intro.tests.TestFindMedianInRange">
+        <test-method status="PASS" signature="testMedianFinder([I, int, int, int)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestFindMedianInRange@5cb0bb]" name="testMedianFinder" duration-ms="32" started-at="2014-07-29T11:11:06Z" data-provider="inRangeMedianFinder" finished-at="2014-07-29T11:11:06Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[I@d4c5a0]]>
+                <![CDATA[[I@14966cc]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[I@faaa93]]>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[9]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[8]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testQuickSort -->
-        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@5cb0bb]" name="testQuickSort" duration-ms="0" started-at="2014-07-28T09:59:15Z" data-provider="quickSort" finished-at="2014-07-28T09:59:15Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[I@d4b411]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[I@79e32f]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testQuickSort -->
-      </class> <!-- com.sirma.itt.javacourse.intro.tests.TestQuickSort -->
+        </test-method> <!-- testMedianFinder -->
+      </class> <!-- com.sirma.itt.javacourse.intro.tests.TestFindMedianInRange -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

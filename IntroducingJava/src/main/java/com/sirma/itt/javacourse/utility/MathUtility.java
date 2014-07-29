@@ -159,8 +159,8 @@ public final class MathUtility {
 
 	public static int[] quickSort(int[] array, int leftIndex, int rightIndex) {
 		
-		if ((rightIndex - leftIndex)<= 1) {
-			if (((rightIndex - leftIndex) == 1)&& (array[leftIndex] > array[rightIndex])) {
+		if ((rightIndex - leftIndex) <= 1) {
+			if (((rightIndex - leftIndex) == 1) && (array[leftIndex] > array[rightIndex])) {
 				swap(array, leftIndex, rightIndex);
 			}
 			return array;			
@@ -170,7 +170,7 @@ public final class MathUtility {
 			int right = rightIndex - 1;
 			
 			while (left <= right) {
-				while (array[left] < array[pivot]){
+				while (array[left] < array[pivot]) {
 					left++;
 				}
 				while (array[right] > array[pivot]) {
@@ -229,6 +229,6 @@ public final class MathUtility {
 			counter++;
 		}
 		int median = findArraysMedian(cluster);
-		return median;
+		return median + leftIndex;
 	}
 }
