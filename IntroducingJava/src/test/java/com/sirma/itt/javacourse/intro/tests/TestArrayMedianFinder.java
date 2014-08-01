@@ -18,7 +18,8 @@ public class TestArrayMedianFinder {
 	public Object[][] testArrayMedianFinder() {
 	 return new Object[][] {
 	   { new int[]{1, 2 ,3, 4 ,5}, 4 },
-	   { new int[]{4, 5, 99, -1, 5, 6}, 3 }
+	   { new int[]{4, 5, 99, -1, 5, 6}, 3 },
+	   {new int[]{3, 1, 2, 9, 5, 4, 6, 10, 7, 14, 12, 13, 11, 0 , 8}, 10}
 	 };
 	}
 	/**

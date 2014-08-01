@@ -2,38 +2,33 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="47" started-at="2014-07-29T08:11:06Z" finished-at="2014-07-29T08:11:06Z">
+  <suite name="Default suite" duration-ms="47" started-at="2014-08-01T15:07:00Z" finished-at="2014-08-01T15:07:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="47" started-at="2014-07-29T08:11:06Z" finished-at="2014-07-29T08:11:06Z">
-      <class name="com.sirma.itt.javacourse.intro.tests.TestFindMedianInRange">
-        <test-method status="PASS" signature="testMedianFinder([I, int, int, int)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestFindMedianInRange@5cb0bb]" name="testMedianFinder" duration-ms="32" started-at="2014-07-29T11:11:06Z" data-provider="inRangeMedianFinder" finished-at="2014-07-29T11:11:06Z">
+    <test name="Default test" duration-ms="47" started-at="2014-08-01T15:07:00Z" finished-at="2014-08-01T15:07:00Z">
+      <class name="com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers">
+        <test-method status="PASS" signature="sumLongNumbers(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers@14f1c67]" name="sumLongNumbers" duration-ms="31" started-at="2014-08-01T18:07:00Z" data-provider="SumLongNumbers" finished-at="2014-08-01T18:07:00Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[I@14966cc]]>
+                <![CDATA[4589356482462]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[4]]>
+                <![CDATA[4712546395736]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[9]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[8]]>
+                <![CDATA[09301902878198]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testMedianFinder -->
-      </class> <!-- com.sirma.itt.javacourse.intro.tests.TestFindMedianInRange -->
+        </test-method> <!-- sumLongNumbers -->
+      </class> <!-- com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

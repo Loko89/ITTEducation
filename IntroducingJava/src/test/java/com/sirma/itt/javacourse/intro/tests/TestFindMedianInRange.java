@@ -17,7 +17,7 @@ public class TestFindMedianInRange {
 	@DataProvider(name = "inRangeMedianFinder")
 	public Object[][] testArrayMedianFinder() {
 	 return new Object[][] {
-	   { new int[]{3, 1, 2, 9, 5, 4, 6, 10, 7, 14, 12, 13, 11, 0 , 8}, 4, 9, 8 }
+	   { new int[]{3, 1, 2, 9, 5, 4, 6, 10, 7, 14, 12, 13, 11, 0 , 8}, 10, 14, 11 }
 	   
 	 };
 	}

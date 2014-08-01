@@ -1,7 +1,8 @@
 package com.sirma.itt.javacourse.utility;
 
 /**
- * @author tpetrov Contains calculation methods
+ * @author tpetrov 
+ * Contains calculation methods
  */
 public final class MathUtility {
 	/**
@@ -229,6 +230,113 @@ public final class MathUtility {
 			counter++;
 		}
 		int median = findArraysMedian(cluster);
-		return median + leftIndex;
+		return median + leftIndex - 1;
+	}
+	/**
+	 * 
+	 * @param firstNumber
+	 * 					first number param.
+	 * @param secondNumber
+	 * 					second number param.
+	 * @return the sum of the numbers returned as string.
+	 */
+	
+	public static String sumLongInts(String firstNumber, String secondNumber){
+		
+	
+		char[] firstNumberArray = firstNumber.toCharArray();
+		char[] secondNumberArray = secondNumber.toCharArray();
+		
+		int[] integerArrayA = null;
+		int[] integerArrayB = null;
+		int[] result = null;
+		
+		if (firstNumberArray.length > secondNumberArray.length) {
+			integerArrayA = new int[firstNumberArray.length];
+			integerArrayB = new int[firstNumberArray.length];
+			result = new int[firstNumberArray.length + 1];
+		} else {
+			integerArrayA = new int[secondNumberArray.length];
+			integerArrayB = new int[secondNumberArray.length];
+			result = new int[secondNumberArray.length + 1];
+		}
+		
+		if (!validateInput(firstNumberArray, secondNumberArray)) {
+			return "Error! Non-digit character found!";
+		} else {
+			charToInt(firstNumberArray, integerArrayA);
+			charToInt(secondNumberArray, integerArrayB);
+			
+			integerArrayA = reverseArray(integerArrayA);
+			integerArrayB = reverseArray(integerArrayB);
+			
+			result = getNumberSummary(integerArrayA, integerArrayB);	
+			result = reverseArray(result);
+			
+			String resultString = "";
+			for (int iterator = 0; iterator < result.length; iterator++) {
+			resultString = resultString + Integer.toString(result[iterator]);
+			}
+		return resultString;
+		}
+	}
+	/**
+	 * 
+	 * @param firstCharNumberArray
+	 * 							first character array variable for checking.
+	 * @param secondCharNumberArray
+	 * 							first character array variable for checking.
+	 * @return false if one or or both variables contain non-digit character.
+	 */
+	public static boolean validateInput(char[] firstCharNumberArray, char[] secondCharNumberArray) {
+		for (int iterator = 0; iterator < firstCharNumberArray.length; iterator++) {
+			if (!Character.isDigit(firstCharNumberArray[iterator])) {
+				return false;
+			}
+		}
+		for (int iterator = 0; iterator < secondCharNumberArray.length; iterator++) {
+			if (!Character.isDigit(secondCharNumberArray[iterator])) {
+				return false;
+			}
+		}
+		return true;
+	}
+	/**
+	 * 
+	 * @param charArray
+	 * 				a character array to get data from.
+	 * @param intArray
+	 * 				an integer array to save converted data in.
+	 */
+	
+	public static void charToInt(char[] charArray, int[] intArray ) {
+		for (int iterator = 0; iterator < charArray.length; iterator++) {	
+			intArray[iterator] = Character.getNumericValue(charArray[iterator]);
+		}
+	}
+	/**
+	 * 
+	 * @param firstArray
+	 * 					first array variable.
+	 * @param secondArray
+	 * 					second array variable.
+	 * @return sum of the elements with the same index plus carry value from the previous index sum.
+	 */
+	public static int[] getNumberSummary(int[] firstArray, int[] secondArray) {
+		
+		int carry = 0;
+		int[] result = null;
+		
+		if (firstArray.length > secondArray.length) {
+			result = new int[firstArray.length + 1];
+		} else {
+			result = new int[secondArray.length + 1];
+		}
+		
+		for (int iterator = 0; iterator < result.length - 1; iterator++) {
+			result[iterator] = (firstArray[iterator] + secondArray[iterator] + carry) % 10;
+			carry = (firstArray[iterator] + secondArray[iterator] + carry) / 10;
+		}
+		return result;
 	}
 }
