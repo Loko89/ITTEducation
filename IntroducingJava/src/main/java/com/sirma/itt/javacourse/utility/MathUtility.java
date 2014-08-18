@@ -261,9 +261,7 @@ public final class MathUtility {
 			result = new int[secondNumberArray.length + 1];
 		}
 		
-		if (!validateInput(firstNumberArray)) {
-			return "Error! Non-digit character found!";
-		} else if (!validateInput(secondNumberArray)) {
+		if ((!validateInput(firstNumberArray)) || (!validateInput(secondNumberArray))) {
 			return "Error! Non-digit character found!";
 		} else {
 			charToInt(firstNumberArray, integerArrayA);
