@@ -261,7 +261,9 @@ public final class MathUtility {
 			result = new int[secondNumberArray.length + 1];
 		}
 		
-		if (!validateInput(firstNumberArray, secondNumberArray)) {
+		if (!validateInput(firstNumberArray)) {
+			return "Error! Non-digit character found!";
+		} else if (!validateInput(secondNumberArray)) {
 			return "Error! Non-digit character found!";
 		} else {
 			charToInt(firstNumberArray, integerArrayA);
@@ -282,20 +284,13 @@ public final class MathUtility {
 	}
 	/**
 	 * 
-	 * @param firstCharNumberArray
-	 * 							first character array variable for checking.
-	 * @param secondCharNumberArray
-	 * 							first character array variable for checking.
+	 * @param charNumberArray
+	 * 						an array of chars to be validate.
 	 * @return false if one or or both variables contain non-digit character.
 	 */
-	public static boolean validateInput(char[] firstCharNumberArray, char[] secondCharNumberArray) {
-		for (int iterator = 0; iterator < firstCharNumberArray.length; iterator++) {
-			if (!Character.isDigit(firstCharNumberArray[iterator])) {
-				return false;
-			}
-		}
-		for (int iterator = 0; iterator < secondCharNumberArray.length; iterator++) {
-			if (!Character.isDigit(secondCharNumberArray[iterator])) {
+	public static boolean validateInput(char[] charNumberArray) {
+		for (int iterator = 0; iterator < charNumberArray.length; iterator++) {
+			if (!Character.isDigit(charNumberArray[iterator])) {
 				return false;
 			}
 		}
