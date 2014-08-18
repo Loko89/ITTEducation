@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="47" started-at="2014-08-01T15:07:00Z" finished-at="2014-08-01T15:07:00Z">
+  <suite name="Default suite" duration-ms="63" started-at="2014-08-18T06:24:56Z" finished-at="2014-08-18T06:24:56Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="47" started-at="2014-08-01T15:07:00Z" finished-at="2014-08-01T15:07:00Z">
+    <test name="Default test" duration-ms="63" started-at="2014-08-18T06:24:56Z" finished-at="2014-08-18T06:24:56Z">
       <class name="com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers">
-        <test-method status="PASS" signature="sumLongNumbers(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers@14f1c67]" name="sumLongNumbers" duration-ms="31" started-at="2014-08-01T18:07:00Z" data-provider="SumLongNumbers" finished-at="2014-08-01T18:07:00Z">
+        <test-method status="PASS" signature="sumLongNumbers(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers@199de59]" name="sumLongNumbers" duration-ms="15" started-at="2014-08-18T09:24:56Z" data-provider="SumLongNumbers" finished-at="2014-08-18T09:24:56Z">
           <params>
             <param index="0">
               <value>
