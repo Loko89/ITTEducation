@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers">
+      <class name="com.sirma.itt.javacourse.intro.tests.TestArrayMedianFinder">
         <methods>
-          <include name="sumLongNumbers" invocation-numbers="0"/>
+          <include name="testMedianFinder" invocation-numbers="3"/>
         </methods>
-      </class> <!-- com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers -->
+      </class> <!-- com.sirma.itt.javacourse.intro.tests.TestArrayMedianFinder -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

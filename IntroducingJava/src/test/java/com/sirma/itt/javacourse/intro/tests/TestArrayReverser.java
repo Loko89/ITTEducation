@@ -3,7 +3,7 @@ package com.sirma.itt.javacourse.intro.tests;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 
-import com.sirma.itt.javacourse.utility.MathUtility;
+import com.sirma.itt.javacourse.utility.ArrayUtility;
 /**
  * 
  * @author tpetrov
@@ -30,7 +30,7 @@ public class TestArrayReverser {
 	 */
 	@org.testng.annotations.Test(dataProvider = "arrayReverser")
 	public void testArrayReverser(int[] testArray, int[] expectedResult){
-		int[] actualResult = MathUtility.reverseArray(testArray);
+		int[] actualResult = ArrayUtility.reverseArray(testArray);
 		Assert.assertEquals(actualResult, expectedResult);
 	}
 

@@ -3,7 +3,7 @@ package com.sirma.itt.javacourse.intro.tests;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 
-import com.sirma.itt.javacourse.utility.MathUtility;
+import com.sirma.itt.javacourse.utility.ArrayUtility;
 /**
  * 
  * @author tpetrov
@@ -32,7 +32,7 @@ public class TestSwap {
 	 */
 	@org.testng.annotations.Test(dataProvider = "testSwap")
 	public void testSwap(int[] testArray, int pos1, int pos2, int[] expectedResult) {
-		MathUtility.swap(testArray, 2, 4);
+		ArrayUtility.swap(testArray, 2, 4);
 		
 		
 		

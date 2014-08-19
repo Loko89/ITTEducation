@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.intro.run;
 import java.util.Scanner;
 
-import com.sirma.itt.javacourse.utility.MathUtility;
+import com.sirma.itt.javacourse.utility.ArrayUtility;
 /**
  * Program for finding an array's medyan.
  * @author tpetrov
@@ -25,7 +25,7 @@ public final class ArrayMedyanFinder {
 			System.out.printf("Input myArray[" + iterator + "]: ");
 			myArray[iterator] = input.nextInt();
 		}
-		int median = MathUtility.findArraysMedian(myArray);
+		int median = ArrayUtility.findArraysMedian(myArray);
 		System.out.println("The Array's medyan is an element with index "
 		+ median + "\n" + " and value " + myArray[median]);
 		input.close();

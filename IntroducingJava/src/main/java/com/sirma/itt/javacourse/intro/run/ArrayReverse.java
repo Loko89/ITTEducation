@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.intro.run;
 import java.util.Scanner;
 
-import com.sirma.itt.javacourse.utility.MathUtility;
+import com.sirma.itt.javacourse.utility.ArrayUtility;
 /**
  * Program for finding an array's medyan.
  * @author tpetrov
@@ -25,7 +25,7 @@ public final class ArrayReverse {
 			System.out.printf("Input myArray[" + iterator + "]: ");
 			myArray[iterator] = input.nextInt();
 		}
-		myArray = MathUtility.reverseArray(myArray);
+		myArray = ArrayUtility.reverseArray(myArray);
 		for (int i =0; i < myArray.length; i++){
 			System.out.printf(myArray[i] + ",");
 		}

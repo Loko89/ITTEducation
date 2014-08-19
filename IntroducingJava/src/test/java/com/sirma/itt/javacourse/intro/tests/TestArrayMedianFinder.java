@@ -3,7 +3,7 @@ package com.sirma.itt.javacourse.intro.tests;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 
-import com.sirma.itt.javacourse.utility.MathUtility;
+import com.sirma.itt.javacourse.utility.ArrayUtility;
 /**
  * 
  * @author tpetrov
@@ -19,7 +19,9 @@ public class TestArrayMedianFinder {
 	 return new Object[][] {
 	   { new int[]{1, 2 ,3, 4 ,5}, 4 },
 	   { new int[]{4, 5, 99, -1, 5, 6}, 3 },
-	   {new int[]{3, 1, 2, 9, 5, 4, 6, 10, 7, 14, 12, 13, 11, 0 , 8}, 10}
+	   {new int[]{3, 1, 2, 9, 5, 4, 6, 10, 7, 14, 12, 13, 11, 0 , 8}, 10},
+	   {new int[]{1, 2}, 2},
+	   {new int[]{10, 4}, 1}
 	 };
 	}
 	/**
@@ -29,7 +31,7 @@ public class TestArrayMedianFinder {
 	@org.testng.annotations.Test(dataProvider = "MedianFinder")
 	public void testMedianFinder(int[] array, int expectedResult) {
 
-		int actualResult = MathUtility.findArraysMedian(array);
+		int actualResult = ArrayUtility.findArraysMedian(array);
 		Assert.assertEquals(actualResult, expectedResult);
 	}
 }

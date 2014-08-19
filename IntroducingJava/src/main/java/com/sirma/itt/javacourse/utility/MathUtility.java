@@ -49,21 +49,7 @@ public final class MathUtility {
 		return (firstNumber * secondNumber) / calcGreatestCommonDivisor(firstNumber, secondNumber);
 	}
 
-	/**
-	 * @param array
-	 *            Stores an array varuable.
-	 * @return returns the index of the element with minimum value.
-	 */
-	public static int getMinElement(int[] array) {
-
-		int minElementIndex = 0;
-		for (int i = minElementIndex; i < array.length; i++) {
-			if (array[minElementIndex] > array[i]) {
-				minElementIndex = i;
-			}
-		}
-		return minElementIndex;
-	}
+	
 
 	/**
 	 * 
@@ -77,75 +63,8 @@ public final class MathUtility {
 			result += array[i];
 		}
 		return result;
-	}
+	}	
 
-	/**
-	 * prints the array's elements to screen.
-	 * 
-	 * @param array
-	 *            Stores an array varuable.
-	 */
-	public static void print(int[] array) {
-		for (int i = 0; i < array.length; i++) {
-			System.out.println("Element myArray[" + i + "] is: " + array[i]);
-		}
-	}
-
-	/**
-	 * Finding an array's medyan.
-	 * 
-	 * @param array
-	 *            an array variable.
-	 * @return returns the array's median.
-	 */
-	public static int findArraysMedian(int[] array) {
-
-		int arrayPointer = 0;
-		int medianIndex = 0;
-		int difference = 0;
-		int smallestDifference = 0;
-		int lowValue = 0;
-		int highValue = 0;
-
-		if (array.length <= 1) {
-			return arrayPointer;
-		} else {
-			smallestDifference = sum(array);
-			for (arrayPointer = 1; arrayPointer < array.length - 1; arrayPointer++) {
-				for (int iterator = 0; iterator < arrayPointer; iterator++) {
-					lowValue += array[iterator];
-				}
-				for (int iterator = arrayPointer + 1; iterator < array.length; iterator++) {
-					highValue += array[iterator];
-				}
-				difference = Math.abs(highValue - lowValue);
-				lowValue = 0;
-				highValue = 0;
-				
-				if (smallestDifference > difference) {
-					smallestDifference = difference;
-					medianIndex = arrayPointer;
-				}
-			}
-		}
-		return medianIndex + 1;
-	}
-
-	/**
-	 * @param array
-	 *            an array variable
-	 * @param pos1
-	 *            the index of the first element to be swapped.
-	 * @param pos2
-	 *            the index of the second element to be swapped.
-	 */
-	public static void swap(int[] array, int pos1, int pos2) {
-
-		int temp = array[pos1];
-		array[pos1] = array[pos2];
-		array[pos2] = temp;
-
-	}
 
 	/**
 	 * QuickSort algorithm for sorting an array.
@@ -162,7 +81,7 @@ public final class MathUtility {
 		
 		if ((rightIndex - leftIndex) <= 1) {
 			if (((rightIndex - leftIndex) == 1) && (array[leftIndex] > array[rightIndex])) {
-				swap(array, leftIndex, rightIndex);
+				ArrayUtility.swap(array, leftIndex, rightIndex);
 			}
 			return array;			
 		} else {
@@ -180,10 +99,10 @@ public final class MathUtility {
 				if ((array[left] > array[pivot]) 
 						&&(array[right] < array[pivot]) 
 						&& (left <= right)) {
-					swap(array, left, right);
+					ArrayUtility.swap(array, left, right);
 				}
 			}
-			swap(array, pivot, left);
+			ArrayUtility.swap(array, pivot, left);
 			pivot = left;
 			quickSort(array, leftIndex, pivot - 1);
 			quickSort(array, pivot + 1, rightIndex);
@@ -191,47 +110,7 @@ public final class MathUtility {
 		return array;
 	}
 
-	/**
-	 * @param array
-	 *            An array to reverse.
-	 * @return Return the reversed array.
-	 */
-	public static int[] reverseArray(int[] array) {
-		
-		int temp = 0;
-		for (int firstIndex = 0, secondIndex = array.length - 1; firstIndex < secondIndex; firstIndex++, secondIndex--) {
-			temp = array[firstIndex];
-			array[firstIndex] = array[secondIndex];
-			array[secondIndex] = temp;
-		}
-		return array;
-	}
-	/**
-	 * Finding an array's medyan in given range of elements.
-	 * @param array
-	 *            an array variable.
-	 * @param leftIndex
-	 * 				  the index of the first element in the array
-	 * @param rightIndex
-	 * 				   the index of the last element in the array            
-	 * @return returns the array's median in the given range of elements.
-	 */
-	public static int findMedianInRange(int[] array, int leftIndex, int rightIndex){
-		
-		int counter = 0;
-		for (int iterator = leftIndex; iterator <= rightIndex; iterator++ ) {
-			counter++;
-		}
-		int[] cluster = new int[counter];
-		counter = 0;
-		
-		for (int iterator = leftIndex; iterator <= rightIndex; iterator++ ) {
-			cluster[counter] = array[iterator];
-			counter++;
-		}
-		int median = findArraysMedian(cluster);
-		return median + leftIndex - 1;
-	}
+	
 	/**
 	 * 
 	 * @param firstNumber
@@ -247,6 +126,10 @@ public final class MathUtility {
 		char[] firstNumberArray = firstNumber.toCharArray();
 		char[] secondNumberArray = secondNumber.toCharArray();
 		
+		if ((!ArrayUtility.validateInput(firstNumberArray)) || (!ArrayUtility.validateInput(secondNumberArray))) {
+			return "Error! Non-digit character found!";
+		}
+		
 		int[] integerArrayA = null;
 		int[] integerArrayB = null;
 		int[] result = null;
@@ -260,53 +143,22 @@ public final class MathUtility {
 			integerArrayB = new int[secondNumberArray.length];
 			result = new int[secondNumberArray.length + 1];
 		}
-		
-		if ((!validateInput(firstNumberArray)) || (!validateInput(secondNumberArray))) {
-			return "Error! Non-digit character found!";
-		} else {
-			charToInt(firstNumberArray, integerArrayA);
-			charToInt(secondNumberArray, integerArrayB);
+		ArrayUtility.charToInt(firstNumberArray, integerArrayA);
+		ArrayUtility.charToInt(secondNumberArray, integerArrayB);
 			
-			integerArrayA = reverseArray(integerArrayA);
-			integerArrayB = reverseArray(integerArrayB);
+		integerArrayA = ArrayUtility.reverseArray(integerArrayA);
+		integerArrayB = ArrayUtility.reverseArray(integerArrayB);
 			
-			result = getNumberSummary(integerArrayA, integerArrayB);	
-			result = reverseArray(result);
+		result = getNumberSummary(integerArrayA, integerArrayB);	
+		result = ArrayUtility.reverseArray(result);
 			
-			String resultString = "";
-			for (int iterator = 0; iterator < result.length; iterator++) {
-			resultString = resultString + Integer.toString(result[iterator]);
-			}
+		String resultString = "";
+		for (int iterator = 0; iterator < result.length; iterator++) {
+		resultString = resultString + Integer.toString(result[iterator]);
+		}
 		return resultString;
-		}
 	}
-	/**
-	 * 
-	 * @param charNumberArray
-	 * 						an array of chars to be validate.
-	 * @return false if one or or both variables contain non-digit character.
-	 */
-	public static boolean validateInput(char[] charNumberArray) {
-		for (int iterator = 0; iterator < charNumberArray.length; iterator++) {
-			if (!Character.isDigit(charNumberArray[iterator])) {
-				return false;
-			}
-		}
-		return true;
-	}
-	/**
-	 * 
-	 * @param charArray
-	 * 				a character array to get data from.
-	 * @param intArray
-	 * 				an integer array to save converted data in.
-	 */
 	
-	public static void charToInt(char[] charArray, int[] intArray ) {
-		for (int iterator = 0; iterator < charArray.length; iterator++) {	
-			intArray[iterator] = Character.getNumericValue(charArray[iterator]);
-		}
-	}
 	/**
 	 * 
 	 * @param firstArray
@@ -332,5 +184,12 @@ public final class MathUtility {
 		}
 		return result;
 	}
-	
+	/**
+	 * 
+	 * @return random letter or digit as char symbol.
+	 */
+	public static char getRandomSymbol(){
+		char symbol = ' ';
+		return symbol;
+	}
 }

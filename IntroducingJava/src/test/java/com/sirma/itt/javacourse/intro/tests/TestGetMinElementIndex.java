@@ -3,7 +3,7 @@ package com.sirma.itt.javacourse.intro.tests;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 
-import com.sirma.itt.javacourse.utility.MathUtility;
+import com.sirma.itt.javacourse.utility.ArrayUtility;
 /**
  * 
  * @author tpetrov
@@ -27,7 +27,7 @@ public class TestGetMinElementIndex {
 	 */
 	@org.testng.annotations.Test(dataProvider = "getMinElementIndex")
 	public void getMinElementIndex(int[] testArray, int expectedResult) {
-		int actualResult = MathUtility.getMinElement(testArray);
+		int actualResult = ArrayUtility.getMinElement(testArray);
 		Assert.assertEquals(actualResult, expectedResult);
 	
 	}
