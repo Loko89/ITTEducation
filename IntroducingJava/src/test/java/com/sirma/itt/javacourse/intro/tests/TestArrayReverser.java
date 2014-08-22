@@ -30,7 +30,7 @@ public class TestArrayReverser {
 	 */
 	@org.testng.annotations.Test(dataProvider = "arrayReverser")
 	public void testArrayReverser(int[] testArray, int[] expectedResult){
-		int[] actualResult = ArrayUtility.reverseArray(testArray);
+		int[] actualResult = ArrayUtility.reverseIntArray(testArray);
 		Assert.assertEquals(actualResult, expectedResult);
 	}
 

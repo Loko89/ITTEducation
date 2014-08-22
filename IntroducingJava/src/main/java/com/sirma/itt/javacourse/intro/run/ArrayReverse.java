@@ -25,7 +25,7 @@ public final class ArrayReverse {
 			System.out.printf("Input myArray[" + iterator + "]: ");
 			myArray[iterator] = input.nextInt();
 		}
-		myArray = ArrayUtility.reverseArray(myArray);
+		myArray = ArrayUtility.reverseIntArray(myArray);
 		for (int i =0; i < myArray.length; i++){
 			System.out.printf(myArray[i] + ",");
 		}

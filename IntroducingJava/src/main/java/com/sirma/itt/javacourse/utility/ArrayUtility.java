@@ -77,7 +77,7 @@ public final class ArrayUtility {
 	 *            An array to reverse.
 	 * @return Return the reversed array.
 	 */
-	public static int[] reverseArray(int[] array) {
+	public static int[] reverseIntArray(int[] array) {
 		
 		int temp = 0;
 		for (int firstIndex = 0, secondIndex = array.length - 1; firstIndex < secondIndex; firstIndex++, secondIndex--) {
@@ -141,5 +141,36 @@ public final class ArrayUtility {
 			}
 		}
 		return true;
+	}
+	/**
+	 * 
+	 * @param array 
+	 * 				an array to reverse.
+	 * @return reversed array.
+	 */
+	public static char[] reverseCharArray(char[] array) {
+		char temp = 0;
+		for (int firstIndex = 0, secondIndex = array.length - 1; firstIndex < secondIndex; firstIndex++, secondIndex--) {
+			temp = array[firstIndex];
+			array[firstIndex] = array[secondIndex];
+			array[secondIndex] = temp;
+		}
+		return array;
+	}
+	/**
+	 * @param array
+	 * 				char array to get elements from.
+	 * @param startIndex
+	 * 				first index of the given range in the array.
+	 * @param endIndex
+	 * 				last index of the given range in the array.
+	 * @return combined string from the elements of the array.
+	 */
+	public static String combineStringInGivenRange(int[] array, int startIndex, int endIndex) {
+		String resultString = "";
+		for (int iterator = startIndex; iterator < endIndex; iterator++) {
+		resultString = resultString + Integer.toString(array[iterator]);
+		}
+		return resultString;
 	}
 }

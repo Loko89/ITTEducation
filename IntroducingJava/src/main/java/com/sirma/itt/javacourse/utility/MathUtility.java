@@ -143,19 +143,22 @@ public final class MathUtility {
 			integerArrayB = new int[secondNumberArray.length];
 			result = new int[secondNumberArray.length + 1];
 		}
+		firstNumberArray = ArrayUtility.reverseCharArray(firstNumberArray);
+		secondNumberArray = ArrayUtility.reverseCharArray(secondNumberArray);
+		
 		ArrayUtility.charToInt(firstNumberArray, integerArrayA);
 		ArrayUtility.charToInt(secondNumberArray, integerArrayB);
 			
-		integerArrayA = ArrayUtility.reverseArray(integerArrayA);
-		integerArrayB = ArrayUtility.reverseArray(integerArrayB);
-			
 		result = getNumberSummary(integerArrayA, integerArrayB);	
-		result = ArrayUtility.reverseArray(result);
-			
+		result = ArrayUtility.reverseIntArray(result);
+		
 		String resultString = "";
-		for (int iterator = 0; iterator < result.length; iterator++) {
-		resultString = resultString + Integer.toString(result[iterator]);
+		if (result[0] == 0) {
+			resultString = ArrayUtility.combineStringInGivenRange(result, 1, result.length);
+		} else {
+			resultString = ArrayUtility.combineStringInGivenRange(result, 0, result.length);
 		}
+			
 		return resultString;
 	}
 	
@@ -178,10 +181,14 @@ public final class MathUtility {
 			result = new int[secondArray.length + 1];
 		}
 		
-		for (int iterator = 0; iterator < result.length - 1; iterator++) {
-			result[iterator] = (firstArray[iterator] + secondArray[iterator] + carry) % 10;
-			carry = (firstArray[iterator] + secondArray[iterator] + carry) / 10;
-		}
+		for (int iterator = 0; iterator < result.length; iterator++) {
+			if (iterator < result.length - 1) {
+				result[iterator] = (firstArray[iterator] + secondArray[iterator] + carry) % 10;
+				carry = (firstArray[iterator] + secondArray[iterator] + carry) / 10;
+			} else {
+				result[iterator] = carry;
+			}
+		}		
 		return result;
 	}
 	/**
