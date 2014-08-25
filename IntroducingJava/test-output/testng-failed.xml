@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers">
+      <class name="com.sirma.itt.javacourse.intro.tests.TestRandomSymbolGenerator">
         <methods>
-          <include name="sumLongNumbers" invocation-numbers="0 1 2 3"/>
+          <include name="randomSymbolGenerator" invocation-numbers="0 1"/>
         </methods>
-      </class> <!-- com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers -->
+      </class> <!-- com.sirma.itt.javacourse.intro.tests.TestRandomSymbolGenerator -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

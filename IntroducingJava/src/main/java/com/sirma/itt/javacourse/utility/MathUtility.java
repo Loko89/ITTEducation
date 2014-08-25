@@ -1,5 +1,6 @@
 package com.sirma.itt.javacourse.utility;
 
+
 /**
  * @author tpetrov 
  * Contains calculation methods
@@ -197,6 +198,10 @@ public final class MathUtility {
 	 */
 	public static char getRandomSymbol(){
 		char symbol = ' ';
+		while (!((Character.isLetter(symbol)) || (Character.isDigit(symbol)))) {
+			symbol = (char) ((Math.random()*(127 - 48)) + 48);
+		}
 		return symbol;
 	}
+	
 }

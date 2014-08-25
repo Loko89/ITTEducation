@@ -1,97 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="62" started-at="2014-08-22T07:32:43Z" finished-at="2014-08-22T07:32:43Z">
+  <suite name="Default suite" duration-ms="62" started-at="2014-08-25T15:38:43Z" finished-at="2014-08-25T15:38:43Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="62" started-at="2014-08-22T07:32:43Z" finished-at="2014-08-22T07:32:43Z">
-      <class name="com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers">
-        <test-method status="PASS" signature="sumLongNumbers(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers@1ddc55f]" name="sumLongNumbers" duration-ms="16" started-at="2014-08-22T10:32:43Z" data-provider="SumLongNumbers" finished-at="2014-08-22T10:32:43Z">
+    <test name="Default test" duration-ms="62" started-at="2014-08-25T15:38:43Z" finished-at="2014-08-25T15:38:43Z">
+      <class name="com.sirma.itt.javacourse.intro.tests.TestRandomSymbolGenerator">
+        <test-method status="PASS" signature="randomSymbolGenerator(int, boolean)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestRandomSymbolGenerator@156f770]" name="randomSymbolGenerator" duration-ms="32" started-at="2014-08-25T18:38:43Z" data-provider="TestRandomSymbolGenerator" finished-at="2014-08-25T18:38:43Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[4589356482462]]>
+                <![CDATA[10]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[4712546395736]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[9301902878198]]>
+                <![CDATA[true]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sumLongNumbers -->
-        <test-method status="PASS" signature="sumLongNumbers(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers@1ddc55f]" name="sumLongNumbers" duration-ms="0" started-at="2014-08-22T10:32:43Z" data-provider="SumLongNumbers" finished-at="2014-08-22T10:32:43Z">
+        </test-method> <!-- randomSymbolGenerator -->
+        <test-method status="PASS" signature="randomSymbolGenerator(int, boolean)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestRandomSymbolGenerator@156f770]" name="randomSymbolGenerator" duration-ms="0" started-at="2014-08-25T18:38:43Z" data-provider="TestRandomSymbolGenerator" finished-at="2014-08-25T18:38:43Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[100]]>
+                <![CDATA[15]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[3000]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[3100]]>
+                <![CDATA[true]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sumLongNumbers -->
-        <test-method status="PASS" signature="sumLongNumbers(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers@1ddc55f]" name="sumLongNumbers" duration-ms="15" started-at="2014-08-22T10:32:43Z" data-provider="SumLongNumbers" finished-at="2014-08-22T10:32:43Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[999999]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[1000000]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sumLongNumbers -->
-        <test-method status="PASS" signature="sumLongNumbers(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers@1ddc55f]" name="sumLongNumbers" duration-ms="0" started-at="2014-08-22T10:32:43Z" data-provider="SumLongNumbers" finished-at="2014-08-22T10:32:43Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10000]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[200]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[10200]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- sumLongNumbers -->
-      </class> <!-- com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers -->
+        </test-method> <!-- randomSymbolGenerator -->
+      </class> <!-- com.sirma.itt.javacourse.intro.tests.TestRandomSymbolGenerator -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
