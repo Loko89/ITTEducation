@@ -2,6 +2,7 @@ package com.sirma.itt.javacourse.intro.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+
 import com.sirma.itt.javacourse.utility.MathUtility;
 /**
  * 
@@ -16,28 +17,26 @@ public class TestRandomSymbolGenerator {
 	@DataProvider(name = "TestRandomSymbolGenerator")
 	public Object[][] testRandomSymbolGenerator() {
 		 return new Object[][] { 
-				 { 10, true },
-				 { 15, true}
+				 { 10 },
+				 { 15 }
 		 };
 		}
 	/**
 	 * @param arrayLength length of the array.
-	 * @param expectedResult Expected result.
 	 */
 	@org.testng.annotations.Test(dataProvider = "TestRandomSymbolGenerator")
-	public void randomSymbolGenerator(int arrayLength, boolean expectedResult) {
+	public void randomSymbolGenerator(int arrayLength) {
 		
-		boolean actualResult = false;
-		char symbol =' ';
-		for (int iterator = 0; iterator < arrayLength; iterator++) {
-			symbol = MathUtility.getRandomSymbol();
-			if ((Character.isLetter(symbol)) || (Character.isDigit(symbol))){
-				actualResult = true;
-			} else {
+		boolean actualResult = true;
+		char[] charArray = MathUtility.generateRandomSymbolArray(arrayLength);
+		
+		for (int index = 0; index < arrayLength; index++) {			
+			if (!((Character.isLetter(charArray[index])) || (Character.isDigit(charArray[index])))){
+				//actualResult = true;
 				actualResult = false;
 				break;
 			}
 		}
-		Assert.assertEquals(actualResult, expectedResult);
+		Assert.assertTrue(actualResult);
 	}
 }

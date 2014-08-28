@@ -1,17 +1,16 @@
 package com.sirma.itt.javacourse.utility;
+
 /**
- * 
- * @author tpetrov
- * Contains array processing methods.
+ * @author tpetrov Contains array processing methods.
  */
 public final class ArrayUtility {
 	/**
 	 * Constructor.
 	 */
 	private ArrayUtility() {
-		
+
 	}
-	
+
 	/**
 	 * Finding an array's medyan.
 	 * 
@@ -35,7 +34,7 @@ public final class ArrayUtility {
 			for (arrayPointer = 0; arrayPointer < array.length; arrayPointer++) {
 				if (arrayPointer == 0) {
 					leftSum = 0;
-				} else{
+				} else {
 					for (int iterator = 0; iterator < arrayPointer; iterator++) {
 						leftSum += array[iterator];
 					}
@@ -50,7 +49,7 @@ public final class ArrayUtility {
 				difference = Math.abs(rightSum - leftSum);
 				leftSum = 0;
 				rightSum = 0;
-				
+
 				if (smallestDifference > difference) {
 					smallestDifference = difference;
 					medianIndex = arrayPointer;
@@ -59,26 +58,28 @@ public final class ArrayUtility {
 			return medianIndex + 1;
 		}
 	}
+
 	/**
-	 * 
 	 * @param charArray
-	 * 				a character array to get data from.
-	 * @param intArray
-	 * 				an integer array to save converted data in.
+	 *            a character array to get data from.
+	 * @return array of integers.
 	 */
-	
-	public static void charToInt(char[] charArray, int[] intArray ) {
-		for (int iterator = 0; iterator < charArray.length; iterator++) {	
+
+	public static int[] charToInt(char[] charArray) {
+		int[] intArray = new int[charArray.length];
+		for (int iterator = 0; iterator < charArray.length; iterator++) {
 			intArray[iterator] = Character.getNumericValue(charArray[iterator]);
 		}
+		return intArray;
 	}
+
 	/**
 	 * @param array
 	 *            An array to reverse.
 	 * @return Return the reversed array.
 	 */
 	public static int[] reverseIntArray(int[] array) {
-		
+
 		int temp = 0;
 		for (int firstIndex = 0, secondIndex = array.length - 1; firstIndex < secondIndex; firstIndex++, secondIndex--) {
 			temp = array[firstIndex];
@@ -87,6 +88,7 @@ public final class ArrayUtility {
 		}
 		return array;
 	}
+
 	/**
 	 * prints the array's elements to screen.
 	 * 
@@ -98,6 +100,7 @@ public final class ArrayUtility {
 			System.out.println("Element myArray[" + i + "] is: " + array[i]);
 		}
 	}
+
 	/**
 	 * @param array
 	 *            Stores an array varuable.
@@ -113,6 +116,7 @@ public final class ArrayUtility {
 		}
 		return minElementIndex;
 	}
+
 	/**
 	 * @param array
 	 *            an array variable
@@ -128,10 +132,10 @@ public final class ArrayUtility {
 		array[pos2] = temp;
 
 	}
+
 	/**
-	 * 
 	 * @param charNumberArray
-	 * 						an array of chars to be validate.
+	 *            an array of chars to be validate.
 	 * @return false if one or or both variables contain non-digit character.
 	 */
 	public static boolean validateInput(char[] charNumberArray) {
@@ -142,10 +146,10 @@ public final class ArrayUtility {
 		}
 		return true;
 	}
+
 	/**
-	 * 
-	 * @param array 
-	 * 				an array to reverse.
+	 * @param array
+	 *            an array to reverse.
 	 * @return reversed array.
 	 */
 	public static char[] reverseCharArray(char[] array) {
@@ -157,20 +161,43 @@ public final class ArrayUtility {
 		}
 		return array;
 	}
+
 	/**
 	 * @param array
-	 * 				char array to get elements from.
+	 *            char array to get elements from.
 	 * @param startIndex
-	 * 				first index of the given range in the array.
+	 *            first index of the given range in the array.
 	 * @param endIndex
-	 * 				last index of the given range in the array.
+	 *            last index of the given range in the array.
 	 * @return combined string from the elements of the array.
 	 */
 	public static String combineStringInGivenRange(int[] array, int startIndex, int endIndex) {
-		String resultString = "";
+
+		StringBuilder combinedString = new StringBuilder();
 		for (int iterator = startIndex; iterator < endIndex; iterator++) {
-		resultString = resultString + Integer.toString(array[iterator]);
+			combinedString.append(array[iterator]);
 		}
-		return resultString;
+		return combinedString.toString();
+	}
+
+	/**
+	 * Copies one array's elements into another's starting with the last element and moving towards
+	 * the first one.
+	 * 
+	 * @param source
+	 *            an array to get elements from.
+	 * @param length 
+	 * 			
+	 * @return an array with the elements copied backward.
+	 */
+	public static int[] normalizeToLength(int[] source, int length) {
+		
+		int[] destination = new int[length];
+
+		int lenghtDifference = destination.length - source.length;
+		for (int index = source.length - 1; index >= 0; index--) {
+			destination[index + lenghtDifference] = source[index];
+		}
+		return destination;
 	}
 }

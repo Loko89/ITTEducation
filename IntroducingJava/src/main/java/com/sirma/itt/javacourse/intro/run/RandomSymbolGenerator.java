@@ -23,12 +23,8 @@ public final class RandomSymbolGenerator {
 		Scanner input = new Scanner(System.in);
 		System.out.print("Input number of the elements: ");
 		arrayLength = input.nextInt();
-		char[] myArray = new char[arrayLength];
-		
-		for(int iterator = 0; iterator < myArray.length; iterator++){
-			myArray[iterator] = MathUtility.getRandomSymbol();
-			System.out.print(myArray[iterator] + ", ");
-		}
+		char[] myArray = MathUtility.generateRandomSymbolArray(arrayLength);
+		System.out.print(myArray);
 		input.close();
 	}
 

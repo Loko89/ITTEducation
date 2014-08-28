@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.sirma.itt.javacourse.intro.tests.TestRandomSymbolGenerator">
+      <class name="com.sirma.itt.javacourse.intro.tests.TestQuickSort">
         <methods>
-          <include name="randomSymbolGenerator" invocation-numbers="0 1"/>
+          <include name="testQuickSort" invocation-numbers="0 1"/>
         </methods>
-      </class> <!-- com.sirma.itt.javacourse.intro.tests.TestRandomSymbolGenerator -->
+      </class> <!-- com.sirma.itt.javacourse.intro.tests.TestQuickSort -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

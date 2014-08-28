@@ -1,6 +1,7 @@
 package com.sirma.itt.javacourse.utility;
 
 
+
 /**
  * @author tpetrov 
  * Contains calculation methods
@@ -90,18 +91,18 @@ public final class MathUtility {
 			int left = leftIndex;
 			int right = rightIndex - 1;
 			
-			while (left <= right) {
-				while (array[left] < array[pivot]) {
+			while (left < right) {
+				while (array[left] <= array[pivot]) {
 					left++;
 				}
-				while (array[right] > array[pivot]) {
+				while (array[right] >= array[pivot]) {
 					right--;
 				}
 				if ((array[left] > array[pivot]) 
 						&&(array[right] < array[pivot]) 
-						&& (left <= right)) {
+						&& (left < right)) {
 					ArrayUtility.swap(array, left, right);
-				}
+				}			
 			}
 			ArrayUtility.swap(array, pivot, left);
 			pivot = left;
@@ -129,38 +130,8 @@ public final class MathUtility {
 		
 		if ((!ArrayUtility.validateInput(firstNumberArray)) || (!ArrayUtility.validateInput(secondNumberArray))) {
 			return "Error! Non-digit character found!";
-		}
-		
-		int[] integerArrayA = null;
-		int[] integerArrayB = null;
-		int[] result = null;
-		
-		if (firstNumberArray.length > secondNumberArray.length) {
-			integerArrayA = new int[firstNumberArray.length];
-			integerArrayB = new int[firstNumberArray.length];
-			result = new int[firstNumberArray.length + 1];
-		} else {
-			integerArrayA = new int[secondNumberArray.length];
-			integerArrayB = new int[secondNumberArray.length];
-			result = new int[secondNumberArray.length + 1];
-		}
-		firstNumberArray = ArrayUtility.reverseCharArray(firstNumberArray);
-		secondNumberArray = ArrayUtility.reverseCharArray(secondNumberArray);
-		
-		ArrayUtility.charToInt(firstNumberArray, integerArrayA);
-		ArrayUtility.charToInt(secondNumberArray, integerArrayB);
-			
-		result = getNumberSummary(integerArrayA, integerArrayB);	
-		result = ArrayUtility.reverseIntArray(result);
-		
-		String resultString = "";
-		if (result[0] == 0) {
-			resultString = ArrayUtility.combineStringInGivenRange(result, 1, result.length);
-		} else {
-			resultString = ArrayUtility.combineStringInGivenRange(result, 0, result.length);
-		}
-			
-		return resultString;
+		}	
+		return getNumberSummary(firstNumberArray, secondNumberArray);
 	}
 	
 	/**
@@ -171,37 +142,57 @@ public final class MathUtility {
 	 * 					second array variable.
 	 * @return sum of the elements with the same index plus carry value from the previous index sum.
 	 */
-	public static int[] getNumberSummary(int[] firstArray, int[] secondArray) {
+	public static String getNumberSummary(char[] firstArray, char[] secondArray) {
 		
-		int carry = 0;
-		int[] result = null;
 		
-		if (firstArray.length > secondArray.length) {
-			result = new int[firstArray.length + 1];
-		} else {
-			result = new int[secondArray.length + 1];
-		}
+				
+		int[] tempIntArrayA = ArrayUtility.charToInt(firstArray);
+		int[] tempIntArrayB = ArrayUtility.charToInt(secondArray);
 		
-		for (int iterator = 0; iterator < result.length; iterator++) {
-			if (iterator < result.length - 1) {
-				result[iterator] = (firstArray[iterator] + secondArray[iterator] + carry) % 10;
-				carry = (firstArray[iterator] + secondArray[iterator] + carry) / 10;
+		
+		if (tempIntArrayA.length != tempIntArrayB.length) {
+			if (tempIntArrayA.length >= tempIntArrayB.length) {
+				tempIntArrayB = ArrayUtility.normalizeToLength(tempIntArrayB, tempIntArrayA.length);
 			} else {
-				result[iterator] = carry;
+				tempIntArrayA = ArrayUtility.normalizeToLength(tempIntArrayA, tempIntArrayB.length);
 			}
+		}
+		int sum = 0;
+		int carry = 0;
+		int[] result = new int[tempIntArrayA.length + 1];
+
+		for (int index = tempIntArrayA.length - 1; index >= 0 ; index--) {
+			sum = (tempIntArrayA[index] + tempIntArrayB[index] + carry);
+			result[index + 1] = sum % 10;
+			carry = sum / 10;
 		}		
-		return result;
+		
+		result[0] = carry;
+		
+		
+		String resultString = "";
+		if (result[0] == 0) {
+			resultString = ArrayUtility.combineStringInGivenRange(result, 1, result.length);
+		} else {
+			resultString = ArrayUtility.combineStringInGivenRange(result, 0, result.length);
+		}
+			
+		return resultString;
 	}
 	/**
-	 * 
+	 * Generates an array of random letters and numbers.
+	 * @param arrayLength 
+	 * 					length of the array.
 	 * @return random letter or digit as char symbol.
 	 */
-	public static char getRandomSymbol(){
-		char symbol = ' ';
-		while (!((Character.isLetter(symbol)) || (Character.isDigit(symbol)))) {
-			symbol = (char) ((Math.random()*(127 - 48)) + 48);
+	public static char[] generateRandomSymbolArray(int arrayLength){
+		char[] charArray = new char[arrayLength];
+		for (int index = 0; index < arrayLength; index++) {
+			while (!((Character.isLetter(charArray[index])) || (Character.isDigit(charArray[index])))) {
+				charArray[index] = (char) ((Math.random()*(127 - 48)) + 48);
+			}
 		}
-		return symbol;
+		return charArray;
 	}
 	
 }
