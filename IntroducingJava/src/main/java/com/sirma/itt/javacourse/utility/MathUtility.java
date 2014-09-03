@@ -92,17 +92,17 @@ public final class MathUtility {
 			int right = rightIndex - 1;
 			
 			while (left < right) {
-				while (array[left] <= array[pivot]) {
+				while (array[left] < array[pivot]) {
 					left++;
 				}
-				while (array[right] >= array[pivot]) {
+				while (array[right] > array[pivot]) {
 					right--;
 				}
 				if ((array[left] > array[pivot]) 
 						&&(array[right] < array[pivot]) 
-						&& (left < right)) {
+						&& (left <= right)) {
 					ArrayUtility.swap(array, left, right);
-				}			
+				} 
 			}
 			ArrayUtility.swap(array, pivot, left);
 			pivot = left;
