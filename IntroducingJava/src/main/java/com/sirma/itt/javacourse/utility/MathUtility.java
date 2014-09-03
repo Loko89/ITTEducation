@@ -95,10 +95,10 @@ public final class MathUtility {
 				while (array[left] < array[pivot]) {
 					left++;
 				}
-				while (array[right] > array[pivot]) {
+				while (array[right] >= array[pivot]) {
 					right--;
 				}
-				if ((array[left] > array[pivot]) 
+				if ((array[left] >= array[pivot]) 
 						&&(array[right] < array[pivot]) 
 						&& (left <= right)) {
 					ArrayUtility.swap(array, left, right);
