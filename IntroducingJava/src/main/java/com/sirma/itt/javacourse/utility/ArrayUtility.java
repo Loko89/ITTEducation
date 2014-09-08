@@ -186,12 +186,12 @@ public final class ArrayUtility {
 	 * 
 	 * @param source
 	 *            an array to get elements from.
-	 * @param length 
-	 * 			
+	 * @param length
+	 *            a length to normalize the array to
 	 * @return an array with the elements copied backward.
 	 */
 	public static int[] normalizeToLength(int[] source, int length) {
-		
+
 		int[] destination = new int[length];
 
 		int lenghtDifference = destination.length - source.length;
