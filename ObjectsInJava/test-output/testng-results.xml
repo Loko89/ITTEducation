@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="4" passed="4">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="78" started-at="2014-09-11T13:02:16Z" finished-at="2014-09-11T13:02:16Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="78" started-at="2014-09-11T13:02:16Z" finished-at="2014-09-11T13:02:16Z">
+      <class name="com.sirma.itt.javacourse.javaobjects.test.TestSumator">
+        <test-method status="PASS" signature="getSum([Ljava.lang.Object;, java.lang.Object)[pri:0, instance:com.sirma.itt.javacourse.javaobjects.test.TestSumator@3b34ca]" name="getSum" duration-ms="16" started-at="2014-09-11T16:02:16Z" data-provider="testGetSum" finished-at="2014-09-11T16:02:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Integer;@18caa36]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSum -->
+        <test-method status="PASS" signature="getSum([Ljava.lang.Object;, java.lang.Object)[pri:0, instance:com.sirma.itt.javacourse.javaobjects.test.TestSumator@3b34ca]" name="getSum" duration-ms="16" started-at="2014-09-11T16:02:16Z" data-provider="testGetSum" finished-at="2014-09-11T16:02:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.String;@12c1472]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[9301902878198]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSum -->
+        <test-method status="PASS" signature="getSum([Ljava.lang.Object;, java.lang.Object)[pri:0, instance:com.sirma.itt.javacourse.javaobjects.test.TestSumator@3b34ca]" name="getSum" duration-ms="0" started-at="2014-09-11T16:02:16Z" data-provider="testGetSum" finished-at="2014-09-11T16:02:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Float;@1fac733]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[8.2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSum -->
+        <test-method status="PASS" signature="getSum([Ljava.lang.Object;, java.lang.Object)[pri:0, instance:com.sirma.itt.javacourse.javaobjects.test.TestSumator@3b34ca]" name="getSum" duration-ms="0" started-at="2014-09-11T16:02:16Z" data-provider="testGetSum" finished-at="2014-09-11T16:02:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@f25f89]]>
+              </value>
+            </param>
+            <param index="1">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSum -->
+      </class> <!-- com.sirma.itt.javacourse.javaobjects.test.TestSumator -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
