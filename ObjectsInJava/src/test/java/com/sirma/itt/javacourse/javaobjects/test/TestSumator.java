@@ -1,5 +1,8 @@
 package com.sirma.itt.javacourse.javaobjects.test;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+
 import com.sirma.itt.javacourse.javaobjects.Sumator;
 
 import org.testng.Assert;
@@ -21,7 +24,8 @@ public class TestSumator {
 				{ new Integer[] { 6, 3 }, new Integer(9) }, 
 				{ new Float[] { 5.8f, 2.4f }, new Float(8.2) },
 				{ new String[] {  "4589356482462", "4712546395736"}, "9301902878198" },
-				{ new Object[] {9, 18}, null }
+				{ new BigInteger[] { BigInteger.valueOf(9), BigInteger.valueOf(18) }, new BigInteger("27") },
+				{ new BigDecimal[] { BigDecimal.valueOf(15), BigDecimal.valueOf(22) }, new BigDecimal("37") }
 				};
 	}
 
@@ -36,7 +40,8 @@ public class TestSumator {
 		Integer integerObject;
 		Float floatObject;
 		String stringObject;
-		//Object objectObject;
+		BigInteger bigIntegerObject;
+		BigDecimal bigDecimalObject;
 
 		if (testArray instanceof Integer[]) {
 			integerObject = Sumator.sum((Integer) testArray[0], (Integer) testArray[1]);
@@ -50,9 +55,13 @@ public class TestSumator {
 			stringObject = Sumator.sum((String) testArray[0], (String) testArray[1]);
 			Assert.assertEquals(stringObject, expectedResult);
 		}
-		//if (testArray instanceof Object[]) {
-			//objectObject = Sumator.sum(testArray[0], testArray[1]);
-			//Assert.assertEquals(objectObject, expectedResult);
-		//}
+		if (testArray instanceof BigInteger[]) {
+			bigIntegerObject = Sumator.sum((BigInteger)testArray[0], (BigInteger)testArray[1]);
+			Assert.assertEquals(bigIntegerObject, expectedResult);
+		}
+		if (testArray instanceof BigDecimal[]) {
+			bigDecimalObject = Sumator.sum((BigDecimal)testArray[0], (BigDecimal)testArray[1]);
+			Assert.assertEquals(bigDecimalObject, expectedResult);
+		}
 	}
 }

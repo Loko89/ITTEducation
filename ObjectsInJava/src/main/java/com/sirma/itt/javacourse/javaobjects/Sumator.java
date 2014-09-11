@@ -1,5 +1,8 @@
 package com.sirma.itt.javacourse.javaobjects;
 
+import java.math.BigInteger;
+import java.math.BigDecimal;
+
 import com.sirma.itt.javacourse.utility.MathUtility;
 
 /**
@@ -46,14 +49,25 @@ public final class Sumator {
 		return MathUtility.sumLongInts(firstStringNumber,secondStringNumber);
 	}
 	/**
-	 * @param firstObjectNumber
+	 * @param firstBigIntegerNumber
 	 *            first string number to sum.
-	 * @param secondObjectNumber
+	 * @param secondBigIntegerNumber
 	 *            second string number to sum.
 	 * @return the sum of the two string numbers.
 	 */
-	public static Object sum(Object firstObjectNumber, Object secondObjectNumber) {
-		return null;
+	public static BigInteger sum(BigInteger firstBigIntegerNumber, BigInteger secondBigIntegerNumber) {
+		return firstBigIntegerNumber.add(secondBigIntegerNumber);
 	}
+	/**
+	 * @param firstBigDecimalNumber
+	 *            first string number to sum.
+	 * @param secondBigDecimalNumber
+	 *            second string number to sum.
+	 * @return the sum of the two string numbers.
+	 */
+	public static BigDecimal sum(BigDecimal firstBigDecimalNumber, BigDecimal secondBigDecimalNumber) {
+		return firstBigDecimalNumber.add(secondBigDecimalNumber);
+	}
+	
 
 }
