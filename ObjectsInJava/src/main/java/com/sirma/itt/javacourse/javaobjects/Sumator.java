@@ -1,5 +1,6 @@
 package com.sirma.itt.javacourse.javaobjects;
-import com.sirma.itt.javacourse.javaobjects.utility.MathUtility;
+
+import com.sirma.itt.javacourse.utility.MathUtility;
 
 /**
  * @author tpetrov Contains methods for summing two numbers.
