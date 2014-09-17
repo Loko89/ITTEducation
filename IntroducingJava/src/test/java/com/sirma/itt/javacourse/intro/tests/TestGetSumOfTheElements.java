@@ -28,7 +28,7 @@ public class TestGetSumOfTheElements {
 	 */
 	@org.testng.annotations.Test(dataProvider = "getSumOfTheElements")
 	public void getSumOfTheElements(int[] testArray, int expectedResult){	
-		int actualResult = MathUtility.sum(testArray);
+		int actualResult = MathUtility.sumArrayElementsValues(testArray);
 		Assert.assertEquals(actualResult, expectedResult);
 	}
 }

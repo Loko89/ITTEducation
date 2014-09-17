@@ -1,7 +1,7 @@
 package com.sirma.itt.javacourse.intro.run;
 import java.util.Scanner;
 
-import com.sirma.itt.javacourse.utility.MathUtility;
+import com.sirma.itt.javacourse.utility.ArrayUtility;
 /**
  * Program for sorting an array using QuickSort algorithm.
  * @author tpetrov
@@ -26,7 +26,7 @@ public final class QuickSort {
 			System.out.printf("Input myArray[" + iterator + "]: ");
 			myArray[iterator] = input.nextInt();
 		}
-		myArray = MathUtility.quickSort(myArray, 0, myArray.length - 1);
+		myArray = ArrayUtility.quickSort(myArray);
 		for (int i = 0; i < myArray.length; i++ ) {
 			System.out.printf(myArray[i] + ", ");
 		}

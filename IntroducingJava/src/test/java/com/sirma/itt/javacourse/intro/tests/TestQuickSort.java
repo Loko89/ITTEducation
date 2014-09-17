@@ -3,7 +3,7 @@ package com.sirma.itt.javacourse.intro.tests;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 
-import com.sirma.itt.javacourse.utility.MathUtility;
+import com.sirma.itt.javacourse.utility.ArrayUtility;
 /**
  * 
  * @author tpetrov
@@ -17,6 +17,30 @@ public class TestQuickSort {
 	@DataProvider(name = "quickSort")
 	public Object[][]testQuickSortAlgorithm(){
 		return new Object[][]{
+				{
+					new int[] { 5 },
+					new int[] { 5 }
+				},
+				{
+					new int[] {10, 8},
+					new int[] {8, 10}
+				},
+				{
+					new int[] {8, 10},
+					new int[] {8, 10}
+				},
+				{
+					new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10},
+					new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+				},
+				{
+					new int[] {10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0},
+					new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+				},
+				{
+					new int[] {55, 25, 1},
+					new int[] {1, 25, 55}
+				},
 				{
 					new int[] {55, 10, 36, 78, 21, 94, 96, 25, 22, 55},
 					new int[] {10, 21, 22, 25, 36, 55, 55, 78, 94, 96}
@@ -36,7 +60,7 @@ public class TestQuickSort {
 	 */
 	@org.testng.annotations.Test(dataProvider = "quickSort")
 	public void testQuickSort(int[] testArray, int[] expectedResult){
-		int[] actualResult = MathUtility.quickSort(testArray, 0, testArray.length - 1);
+		int[] actualResult = ArrayUtility.quickSort(testArray);
 		Assert.assertEquals(actualResult, expectedResult);
 	}
 

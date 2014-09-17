@@ -30,13 +30,13 @@ public final class ArrayUtility {
 		if (array.length <= 1) {
 			return arrayPointer;
 		} else {
-			smallestDifference = MathUtility.sum(array);
+			smallestDifference = MathUtility.sumArrayElementsValues(array);
 			for (arrayPointer = 0; arrayPointer < array.length; arrayPointer++) {
 				if (arrayPointer == 0) {
 					leftSum = 0;
 				} else {
-					for (int iterator = 0; iterator < arrayPointer; iterator++) {
-						leftSum += array[iterator];
+					for (int index = 0; index < arrayPointer; index++) {
+						leftSum += array[index];
 					}
 				}
 				if (arrayPointer == array.length - 1) {
@@ -163,6 +163,9 @@ public final class ArrayUtility {
 	}
 
 	/**
+	 * This method takes elements from part of array that is between thwo given indexes and returns
+	 * a string that is combination of these elements.
+	 * 
 	 * @param array
 	 *            char array to get elements from.
 	 * @param startIndex
@@ -171,13 +174,12 @@ public final class ArrayUtility {
 	 *            last index of the given range in the array.
 	 * @return combined string from the elements of the array.
 	 */
-	public static String combineStringInGivenRange(int[] array, int startIndex, int endIndex) {
+	public static String subString(int[] array, int startIndex, int endIndex) {
 
 		StringBuilder combinedString = new StringBuilder();
-		for (int iterator = startIndex; iterator < endIndex; iterator++) {
-			combinedString.append(array[iterator]);
-		}
-		return combinedString.toString();
+		combinedString.append(array);
+		return combinedString.substring(startIndex, endIndex);
+
 	}
 
 	/**
@@ -199,5 +201,60 @@ public final class ArrayUtility {
 			destination[index + lenghtDifference] = source[index];
 		}
 		return destination;
+	}
+
+	/**
+	 * QuickSort algorithm for sorting an array.
+	 * 
+	 * @param leftIndex
+	 *            the index of the first element in the array
+	 * @param rightIndex
+	 *            the index of the last element in the array
+	 * @param array
+	 *            An array for sorting.
+	 * @return returns a sorted array.
+	 */
+
+	private static int[] quickSort(int[] array, int leftIndex, int rightIndex) {
+		int range = rightIndex - leftIndex;
+		if (range <= 1) {
+			if ((range == 1) && (array[leftIndex] > array[rightIndex])) {
+				ArrayUtility.swap(array, leftIndex, rightIndex);
+			}
+			return array;
+		} else {
+			int pivot = rightIndex;
+			int left = leftIndex;
+			int right = rightIndex - 1;
+
+			while (left < right) {
+				while (array[left] < array[pivot]) {
+					left++;
+				}
+				while ((array[right] >= array[pivot]) && (right > left)) {
+					right--;
+				}
+				if ((array[left] >= array[pivot]) && (array[right] < array[pivot])
+						&& (left <= right)) {
+					ArrayUtility.swap(array, left, right);
+				}
+			}
+			ArrayUtility.swap(array, pivot, left);
+			pivot = left;
+			quickSort(array, leftIndex, pivot - 1);
+			quickSort(array, pivot + 1, rightIndex);
+		}
+		return array;
+	}
+
+	/**
+	 * Sorts an array using quick sort algorithm.
+	 * 
+	 * @param array
+	 *            an array to be sorted.
+	 * @return a sorted array.
+	 */
+	public static int[] quickSort(int[] array) {
+		return quickSort(array, 0, array.length - 1);
 	}
 }

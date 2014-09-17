@@ -1,54 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" total="9" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="62" started-at="2014-09-03T06:36:50Z" finished-at="2014-09-03T06:36:50Z">
+  <suite name="Default suite" duration-ms="79" started-at="2014-09-16T06:50:13Z" finished-at="2014-09-16T06:50:13Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="62" started-at="2014-09-03T06:36:50Z" finished-at="2014-09-03T06:36:50Z">
+    <test name="Default test" duration-ms="79" started-at="2014-09-16T06:50:13Z" finished-at="2014-09-16T06:50:13Z">
       <class name="com.sirma.itt.javacourse.intro.tests.TestQuickSort">
-        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="16" started-at="2014-09-03T09:36:50Z" data-provider="quickSort" finished-at="2014-09-03T09:36:50Z">
+        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="15" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[I@1a5d193]]>
+                <![CDATA[[I@f5e12]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[I@16237e0]]>
+                <![CDATA[[I@e8efc5]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testQuickSort -->
-        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="0" started-at="2014-09-03T09:36:50Z" data-provider="quickSort" finished-at="2014-09-03T09:36:50Z">
+        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="0" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[I@1425e17]]>
+                <![CDATA[[I@8c2f76]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[I@2f6aea]]>
+                <![CDATA[[I@1801443]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testQuickSort -->
-        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="15" started-at="2014-09-03T09:36:50Z" data-provider="quickSort" finished-at="2014-09-03T09:36:50Z">
+        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="0" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[I@1143614]]>
+                <![CDATA[[I@d5a86c]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[I@1ea6afc]]>
+                <![CDATA[[I@12471dc]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testQuickSort -->
+        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="0" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[I@1af5350]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[I@186d315]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testQuickSort -->
+        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="0" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[I@1adf08f]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[I@8c6f69]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testQuickSort -->
+        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="0" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[I@a2f9e6]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[I@1c480e8]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testQuickSort -->
+        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="0" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[I@1b2668f]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[I@16b5d1c]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testQuickSort -->
+        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="0" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[I@1eb18de]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[I@1adc5f7]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testQuickSort -->
+        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="0" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[I@1e66f65]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[[I@19b7aeb]]>
               </value>
             </param>
           </params>

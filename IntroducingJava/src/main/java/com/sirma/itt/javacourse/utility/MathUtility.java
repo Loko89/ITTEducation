@@ -54,58 +54,13 @@ public final class MathUtility {
 	 *            Stores an array varuable.
 	 * @return returns the sum of all elements in the array.
 	 */
-	public static int sum(int[] array) {
+	public static int sumArrayElementsValues(int[] array) {
 		int result = 0;
 		for (int i = 0; i < array.length; i++) {
 			result += array[i];
 		}
 		return result;
 	}
-
-	/**
-	 * QuickSort algorithm for sorting an array.
-	 * 
-	 * @param leftIndex
-	 *            the index of the first element in the array
-	 * @param rightIndex
-	 *            the index of the last element in the array
-	 * @param array
-	 *            An array for sorting.
-	 * @return returns a sorted array.
-	 */
-
-	public static int[] quickSort(int[] array, int leftIndex, int rightIndex) {
-
-		if ((rightIndex - leftIndex) <= 1) {
-			if (((rightIndex - leftIndex) == 1) && (array[leftIndex] > array[rightIndex])) {
-				ArrayUtility.swap(array, leftIndex, rightIndex);
-			}
-			return array;
-		} else {
-			int pivot = rightIndex;
-			int left = leftIndex;
-			int right = rightIndex - 1;
-
-			while (left < right) {
-				while (array[left] < array[pivot]) {
-					left++;
-				}
-				while (array[right] >= array[pivot]) {
-					right--;
-				}
-				if ((array[left] >= array[pivot]) && (array[right] < array[pivot])
-						&& (left <= right)) {
-					ArrayUtility.swap(array, left, right);
-				}
-			}
-			ArrayUtility.swap(array, pivot, left);
-			pivot = left;
-			quickSort(array, leftIndex, pivot - 1);
-			quickSort(array, pivot + 1, rightIndex);
-		}
-		return array;
-	}
-
 	/**
 	 * @param firstNumber
 	 *            first number param.
@@ -123,23 +78,26 @@ public final class MathUtility {
 				|| (!ArrayUtility.validateInput(secondNumberArray))) {
 			return "Error! Non-digit character found!";
 		}
-		return getNumberSummary(firstNumberArray, secondNumberArray);
+		return sum(firstNumberArray, secondNumberArray);
 	}
 
 	/**
+	 * This method sums takes two arrays and sums every couple of the two arrays 
+	 * that has the same indexes and return and returns the final sum as string.
+	 * 
 	 * @param firstArray
 	 *            first array variable.
 	 * @param secondArray
 	 *            second array variable.
 	 * @return sum of the elements with the same index plus carry value from the previous index sum.
 	 */
-	public static String getNumberSummary(char[] firstArray, char[] secondArray) {
+	public static String sum(char[] firstArray, char[] secondArray) {
 
 		int[] tempIntArrayA = ArrayUtility.charToInt(firstArray);
 		int[] tempIntArrayB = ArrayUtility.charToInt(secondArray);
 
 		if (tempIntArrayA.length != tempIntArrayB.length) {
-			if (tempIntArrayA.length >= tempIntArrayB.length) {
+			if (tempIntArrayA.length > tempIntArrayB.length) {
 				tempIntArrayB = ArrayUtility.normalizeToLength(tempIntArrayB, tempIntArrayA.length);
 			} else {
 				tempIntArrayA = ArrayUtility.normalizeToLength(tempIntArrayA, tempIntArrayB.length);
@@ -159,9 +117,9 @@ public final class MathUtility {
 
 		String resultString = "";
 		if (result[0] == 0) {
-			resultString = ArrayUtility.combineStringInGivenRange(result, 1, result.length);
+			resultString = ArrayUtility.subString(result, 1, result.length);
 		} else {
-			resultString = ArrayUtility.combineStringInGivenRange(result, 0, result.length);
+			resultString = ArrayUtility.subString(result, 0, result.length);
 		}
 
 		return resultString;
@@ -178,7 +136,7 @@ public final class MathUtility {
 		char[] charArray = new char[arrayLength];
 		for (int index = 0; index < arrayLength; index++) {
 			while (!((Character.isLetter(charArray[index])) || (Character.isDigit(charArray[index])))) {
-				charArray[index] = (char) ((Math.random() * (127 - 48)) + 48);
+				charArray[index] = (char) ((Math.random() * 79) + 48);
 			}
 		}
 		return charArray;
