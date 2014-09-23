@@ -177,8 +177,10 @@ public final class ArrayUtility {
 	public static String subString(int[] array, int startIndex, int endIndex) {
 
 		StringBuilder combinedString = new StringBuilder();
-		combinedString.append(array);
-		return combinedString.substring(startIndex, endIndex);
+		for (int index = startIndex; index < endIndex; index++) {
+			combinedString.append(array[index]);
+		}
+		return combinedString.toString();
 
 	}
 

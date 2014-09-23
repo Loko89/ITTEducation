@@ -1,157 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="9" passed="9">
+<testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="79" started-at="2014-09-16T06:50:13Z" finished-at="2014-09-16T06:50:13Z">
+  <suite name="Default suite" duration-ms="63" started-at="2014-09-23T13:41:42Z" finished-at="2014-09-23T13:41:42Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="79" started-at="2014-09-16T06:50:13Z" finished-at="2014-09-16T06:50:13Z">
-      <class name="com.sirma.itt.javacourse.intro.tests.TestQuickSort">
-        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="15" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
+    <test name="Default test" duration-ms="63" started-at="2014-09-23T13:41:42Z" finished-at="2014-09-23T13:41:42Z">
+      <class name="com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers">
+        <test-method status="PASS" signature="sumLongNumbers(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers@14e8ac9]" name="sumLongNumbers" duration-ms="15" started-at="2014-09-23T16:41:42Z" data-provider="SumLongNumbers" finished-at="2014-09-23T16:41:42Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[I@f5e12]]>
+                <![CDATA[4589356482462]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[I@e8efc5]]>
+                <![CDATA[4712546395736]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[9301902878198]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testQuickSort -->
-        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="0" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
+        </test-method> <!-- sumLongNumbers -->
+        <test-method status="PASS" signature="sumLongNumbers(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers@14e8ac9]" name="sumLongNumbers" duration-ms="0" started-at="2014-09-23T16:41:42Z" data-provider="SumLongNumbers" finished-at="2014-09-23T16:41:42Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[I@8c2f76]]>
+                <![CDATA[999999]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[I@1801443]]>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1000000]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testQuickSort -->
-        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="0" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
+        </test-method> <!-- sumLongNumbers -->
+        <test-method status="PASS" signature="sumLongNumbers(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers@14e8ac9]" name="sumLongNumbers" duration-ms="0" started-at="2014-09-23T16:41:42Z" data-provider="SumLongNumbers" finished-at="2014-09-23T16:41:42Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[I@d5a86c]]>
+                <![CDATA[100]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[I@12471dc]]>
+                <![CDATA[3000]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[3100]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testQuickSort -->
-        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="0" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
+        </test-method> <!-- sumLongNumbers -->
+        <test-method status="PASS" signature="sumLongNumbers(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers@14e8ac9]" name="sumLongNumbers" duration-ms="0" started-at="2014-09-23T16:41:42Z" data-provider="SumLongNumbers" finished-at="2014-09-23T16:41:42Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[I@1af5350]]>
+                <![CDATA[10000]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[[I@186d315]]>
+                <![CDATA[200]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[10200]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testQuickSort -->
-        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="0" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[I@1adf08f]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[I@8c6f69]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testQuickSort -->
-        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="0" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[I@a2f9e6]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[I@1c480e8]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testQuickSort -->
-        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="0" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[I@1b2668f]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[I@16b5d1c]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testQuickSort -->
-        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="0" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[I@1eb18de]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[I@1adc5f7]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testQuickSort -->
-        <test-method status="PASS" signature="testQuickSort([I, [I)[pri:0, instance:com.sirma.itt.javacourse.intro.tests.TestQuickSort@156f770]" name="testQuickSort" duration-ms="0" started-at="2014-09-16T09:50:13Z" data-provider="quickSort" finished-at="2014-09-16T09:50:13Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[I@1e66f65]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[[I@19b7aeb]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testQuickSort -->
-      </class> <!-- com.sirma.itt.javacourse.intro.tests.TestQuickSort -->
+        </test-method> <!-- sumLongNumbers -->
+      </class> <!-- com.sirma.itt.javacourse.intro.tests.TestSumLongNumbers -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
