@@ -38,6 +38,9 @@ public class HangmanGame {
 	}
 
 	/**
+	 * Generates pseudo random number and returns a word from the word array with the index matching
+	 * the generated number.
+	 * 
 	 * @return random chosen word from an array of strings.
 	 */
 	private String randomStringSelector() {
@@ -45,6 +48,8 @@ public class HangmanGame {
 	}
 
 	/**
+	 * Returns true if the word is fully uncovered.
+	 * 
 	 * @return true if the word is already fully uncovered otherwise return false
 	 */
 	public boolean isGuessed() {
@@ -59,6 +64,8 @@ public class HangmanGame {
 	}
 
 	/**
+	 * Method that returns the chosen game word but with "*" instead of letters.
+	 * 
 	 * @return hidden word with some uncovered letters.
 	 */
 	private String hideWord() {
@@ -70,6 +77,8 @@ public class HangmanGame {
 	}
 
 	/**
+	 * Method that returns true if the chosen letter has already been chosen.
+	 * 
 	 * @param chosenLetter
 	 *            a letter to check.
 	 * @return true if there is a match otherwise return false.
@@ -89,6 +98,8 @@ public class HangmanGame {
 	}
 
 	/**
+	 * Method that returns true if chosen game word contains the chosen letter.
+	 * 
 	 * @param chosenLetter
 	 *            a letter to check.
 	 * @return true if the letter is contained in the word, otherwise return false.
@@ -98,6 +109,9 @@ public class HangmanGame {
 	}
 
 	/**
+	 * Uncovers letters in the word that match the chosen letter if there is one or more matches in
+	 * the word.
+	 * 
 	 * @param chosenLetter
 	 *            a letter to uncover.
 	 * @return hidden word with the new uncovered letters.
@@ -113,6 +127,9 @@ public class HangmanGame {
 	}
 
 	/**
+	 * A method that adds the chosen letter to the array containing already selected letters if the
+	 * chosen letter is not already contained in the array.
+	 * 
 	 * @param chosenLetter
 	 *            a letter to add.
 	 * @return a letter string with added new letters
@@ -126,9 +143,14 @@ public class HangmanGame {
 	}
 
 	/**
+	 * A method that accepts an input string, checks if the string has already been used before and
+	 * searches for match in the string that represents the chosen game word.
+	 * 
 	 * @param input
 	 *            an input string
-	 * @return a string that matches current case.
+	 * @return an int that matches current case: 0 - the string has been chosen before; 1 - the
+	 *         input string is contained in the other one; 2 - the input string is not contained int
+	 *         the other one.
 	 */
 	public int caseSelector(String input) {
 		int caseSelector;
@@ -147,6 +169,9 @@ public class HangmanGame {
 	}
 
 	/**
+	 * Returns true if the word is not fully uncovered and the rmaining available wrong guesses are
+	 * not down to 0.
+	 * 
 	 * @return true if the conditions are met otherwise return false;
 	 */
 	public boolean isGameActive() {
@@ -155,6 +180,8 @@ public class HangmanGame {
 	}
 
 	/**
+	 * Method that returns true if the input string matches the chosen game word.
+	 * 
 	 * @param chosenLetter
 	 *            a string to compare.
 	 * @return true if the two strings are equal, otherwise return false.
@@ -172,6 +199,8 @@ public class HangmanGame {
 	}
 
 	/**
+	 * Adds a letter in the array containing already selected letters.
+	 * 
 	 * @param chosenLetter
 	 *            a letter to add in the array
 	 */
