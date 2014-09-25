@@ -149,7 +149,7 @@ public class HangmanGame {
 	 * @param input
 	 *            an input string
 	 * @return an int that matches current case: 0 - the string has been chosen before; 1 - the
-	 *         input string is contained in the other one; 2 - the input string is not contained int
+	 *         input string is contained in the game word; 2 - the input string is not contained int
 	 *         the other one.
 	 */
 	public int caseSelector(String input) {
