@@ -25,7 +25,6 @@ public final class Hangman {
 		
 		HangmanGame hangmanGame = new HangmanGame();
 		System.out.print(hangmanGame.getHiddenWord() + "\n");
-		System.out.print(hangmanGame.getWordToGuess() + "\n");
 		Scanner input = new Scanner(System.in);
 		String myGuess = "";
 		int caseSelector = 0;
