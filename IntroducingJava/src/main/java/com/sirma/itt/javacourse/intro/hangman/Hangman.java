@@ -6,7 +6,7 @@ import java.util.Scanner;
  * @author tpetrov Represents a Hangman game.
  */
 public final class Hangman {
-	private static String[] messages = new String[] { "This letter has already been chosen!",
+	private static final String[] MESSAGES = new String[] { "This letter has already been chosen!",
 			"The letter is contained in the word!",
 			"The letter is not contained in the word! Try again!", "Guessess until death: " };
 	/**
@@ -39,9 +39,9 @@ public final class Hangman {
 				}
 				break;
 			} else {
-				System.out.print(messages[caseSelector] + "\n");
+				System.out.print(MESSAGES[caseSelector] + "\n");
 				System.out.print(hangmanGame.getHiddenWord() + "\n");
-				System.out.print(messages[3] + hangmanGame.getAvailableWrongGuesses() + "\n");
+				System.out.print(MESSAGES[3] + hangmanGame.getAvailableWrongGuesses() + "\n");
 			}
 		}
 		if (hangmanGame.isGuessed()) {

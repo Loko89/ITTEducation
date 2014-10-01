@@ -6,7 +6,7 @@ package com.sirma.itt.javacourse.intro.hangman;
 
 public class HangmanGame {
 
-	private static String[] wordsArray = { "computer", "radio", "calculator", "teacher", "bureau",
+	private static final String[] WORDS_ARRAY = { "computer", "radio", "calculator", "teacher", "bureau",
 			"police", "geometry", "president", "subject", "country", "enviroment", "classroom",
 			"animals", "province", "month", "politics", "puzzle", "instrument", "kitchen",
 			"language", "vampire", "ghost", "solution", "service", "software", "virus", "security",
@@ -44,7 +44,7 @@ public class HangmanGame {
 	 * @return random chosen word from an array of strings.
 	 */
 	private String randomStringSelector() {
-		return wordsArray[(int) (Math.random() * (wordsArray.length - 1))];
+		return WORDS_ARRAY[(int) (Math.random() * (WORDS_ARRAY.length - 1))];
 	}
 
 	/**
